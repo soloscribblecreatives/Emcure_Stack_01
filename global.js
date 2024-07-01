@@ -283,7 +283,7 @@ function set_pg_content(pg_id) {
 	var selectedContentPath = '';
 	switch (pg_id) {
 		case 1:
-		content = '<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><div class="s7"><img src="slide1/s7.png"/></div><div class="s8"><img src="slide1/s8.png"/></div><div class="s9"><img src="slide1/s9.png"/></div><div class="s10wrap"><div class="s10"><img src="slide1/s10.png"/></div></div><div class="s11"><img src="slide1/s11.png"/></div><div class="s12"><img src="slide1/s12.png"/></div><div class="s13"><img src="slide1/s13.png"/></div><div class="s14"><img src="slide1/s14.png"/></div><div class="s15"><img src="slide1/s15.png"/></div><div class="s16"><img src="slide1/s16.png"/></div><div class="s17"><img src="slide1/s17.gif"/></div>';
+		content = '<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s11"><img src="slide1/s11.png"/></div><div class="s12"><img src="slide1/s12.png"/></div><div class="s13"><img src="slide1/s13.png"/></div><div class="s14"><img src="slide1/s14.png"/></div><div class="s15"><img src="slide1/s15.png"/></div><div class="s16"><img src="slide1/s16.png"/></div><div class="s17"><img src="slide1/s17.gif"/></div>';
 		break;
 	}
 
