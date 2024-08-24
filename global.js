@@ -1,5 +1,4 @@
 var arrSurveyQuestions = {
-   2: "Can you help?"
 };
 /*Code by android developers start here*/
 var startLoc = null;
@@ -176,7 +175,7 @@ else{
 	
  } 
  
-	if(nextSlideNo <= 3){//number 3 is number of total slides present
+	if(nextSlideNo <= 5){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -249,10 +248,10 @@ if(direction == 'b') {
 	
 }else {
 	
-	if(page_id <= 3){
+	if(page_id <= 5){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 4){
+		if(page_id == 6){
             flag=1;
         }
 	}
@@ -339,13 +338,19 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div id="video1"><video onended="myFunction1()" id="startVideo" width="1080" height="810" autoplay playsinline><source src="slide1/1.mp4"></source></video></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2 s2-1"><img src="slide1/s2.png"/></div><div class="s3 s3-1"><img src="slide1/s3.png"/></div><div class="s4 s4-1"><img src="slide1/s4.png"/></div><div class="s5 s5-1"><img src="slide1/s5.png"/></div><div class="s6 s6-1"><img src="slide1/s6.png"/></div><div class="s7" onclick="kill()"><img src="slide1/s7.png"/></div><div class="s8 s8-1" onclick="trigger()"><img src="slide1/s8.png"/></div><div class="s9"><img src="slide1/s9.png"/></div><div class="s10"><img src="slide1/s10.png"/></div><div class="s11"><img src="slide1/s11.png"/></div>';
 	break;
 	case 2:
-	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen" /><img id="asset1" src="slide2/1.png" width="1079" height="810"><img id="asset2" src="slide2/2.png" width="544" height="393"><img id="asset3" src="slide2/3.png" width="499" height="127"><img id="asset4" src="slide2/4.png" width="110" height="110"><img id="asset5" src="slide2/5.png" width="110" height="110"><audio id="yesaudio" playsinline><source src="slide2/6.mp3"></source></audio><audio id="noaudio" playsinline><source src="slide2/7.mp3"></source></audio><audio id="ding" playsinline><source src="slide2/8.mp3"></source></audio>';
+	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><audio id="chess" src="slide2/chess.mp3" type="audio/mpeg"></audio>';
 	break;
 	case 3:
-	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen" /><img id="asset1" src="slide3/1.png" width="1079" height="810"><img id="asset2" src="slide3/2.png" width="250" height="164"><img id="asset3" src="slide3/3.png" width="544" height="168"><img id="asset4" src="slide3/4.png" width="366" height="170"><img id="asset5" src="slide3/5.png" width="437" height="85"><img id="asset6" src="slide3/6.png" width="600" height="123"><img id="asset7" src="slide3/7.png" width="274" height="161"><div id="video2"><video onended="myFunction2()" width="1080" height="810" autoplay playsinline><source src="slide3/1.mp4"></source></video></div></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/1.jpg" width="1080" height="810" alt=""/></div>';
+	break;
+	case 4:
+	content='<link rel="stylesheet" type="text/css" href="slide4/slide4.css" media="screen"/><div class="s1"><img src="slide4/1.jpg" width="1080" height="810" alt=""/></div>';
+	break;
+	case 5:
+	content='<link rel="stylesheet" type="text/css" href="slide5/slide5.css" media="screen"/><div class="s1"><img src="slide5/1.jpg" width="1080" height="810" alt=""/></div>';
 	break;
 }
 
@@ -436,33 +441,8 @@ function open_page2(url,page_id,count){
 	document.getElementById("click_through").innerHTML='';
 	
 	if(page_id == 2){
-		document.getElementById("click_through").innerHTML='<div class="slide02_inline_wraper" id="buttons">\
-		<div id="slide01_question01_choices01" class="control-group" onclick="initSound();">\
-			<label class="control control_radio"><div class="lbl_pos"></div><input type="radio" id="slide01_radio01_01" name="checkB01" value="Yes"/><div class="control_indicator" id="radio01" data-answer="yes" onclick="select1()"></div></label>\
-			<label class="control control_radio"><div class="lbl_pos"></div><input type="radio" id="slide01_radio01_02" name="checkB01" value="No"/><div class="control_indicator" id="radio02" data-answer="no" onclick="select2()"></div></label>\
-		</div>\
-			<div class="submit_button" onclick="savedata(1,1,2,\'' + page_id + '\');endTime1(2);hidesubmitonclick();"></div>\
-			<div class="goRight" onclick="goRight()"></div>\
-		</div>';
-		
-		$('#slide01_question01_choices01').delay(10).fadeIn();
-
-		$(document).on("click touchstart", "#slide01_question01_choices01 input[name]", function(){
-			if ($("input[name='checkB01']:checked").val()){
-				var test = $(this).val();	
-			}			
-		});
-
-		$(document).on("click", ".submit_button", function(){
-			$('.slide01_submit_popup_content').fadeIn();
-		});
-
-		$(document).on("click", ".slide01_submit_popup_close_btn_mask", function(){
-			$('.slide01_submit_popup_content').fadeOut();
-		});
+		document.getElementById("click_through").innerHTML='<div class="blocker"></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><div class="s7 s7-1" onclick="kill()"><img src="slide1/s7.png"/></div><div class="s8 s8-2" onclick="trigger()"><img src="slide1/s8.png"/></div><div class="s9 s9-1"><img src="slide1/s9.png"/></div><div class="s10 s10-1"><img src="slide1/s10.png"/></div><div class="s11"><img src="slide1/s11.png"/></div>';
 	}
-	
-
 }
 
 	function checkBtns(refNum){
@@ -535,126 +515,29 @@ $(document).ready(function(){
 
 
 /*--------------------- animation javascript -----------------------*/
-
-
-function closewindowslide(currentslide)
-{
-	toCaptureTime(currentslide);
-}
-function endTime1(currentSlideNo){
-		var existingTime = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+currentSlideNo);
-		var newTime = Date.now();
-		var newSlideTime = (newTime - existingTime);
-		localStorage.setItem(currentContentId+"_"+contentName+"_totalTime_slideNo_"+currentSlideNo ,(newSlideTime/1000) );
-		var endTimeInDBFormat = currentTimeInDatabaseFormat();
-		localStorage.setItem(currentContentId+"_"+contentName+"_EndTime_"+currentSlideNo ,endTimeInDBFormat);
-
-}
-
-function hidesubmitonclick()
-{
-	$('.submit_button').css("display","none");
-	goRight();
-	var ding = $("#ding")[0]
-	ding.play()
-}
-
-function goRight() {
-	setTimeout(function(){
-		go_nav('f');
-	}, 1200);
-}
-
-function select1() {
-	$('.select1').css("display","block");
-	$('.select2').css("display","none");
-	$(".submit_button").css("display","block");
-}
-
-function select2() {
-	$('.select1').css("display","none");
-	$('.select2').css("display","block");
-	$(".submit_button").css("display","block");
-}
-
-function savedata(answer,type,questionNumber,page_id) {
-	$('#radio01').css("display","none");
-	$('#radio02').css("display","none");
-	$(".submit_button").css("display","none");
-	
-	
-	if(questionNumber == 2){
-		var selectedAnswer1 = document.querySelector('input[name = "checkB01"]:checked').value;
-		var varanswer = selectedAnswer1;
-	}
-	
-	var question = arrSurveyQuestions[questionNumber];
-	//localStorage.setItem("surveyQuestion_"+currentContentId+"_"+contentName+"_"+questionNumber,question);
-	//localStorage.setItem("surveyAnswer_"+currentContentId+"_"+contentName+"_"+questionNumber,varanswer);
-	//alert(question+varanswer);
-	
-	
-	var surveydata={
-		"question": question,
-        "answer": varanswer
-    };
-	
-	var objectData={
-		"gotoNextPrevBrand": localStorage.getItem("gotoNextPrevBrand"),
-          "previousslide": localStorage.getItem("previousslide"),
-         "slideId": page_id,
-		 "data": `${JSON.stringify(surveydata)}`
-         };
-	  var params = {
-	  "query" : objectData,
-	  "type" : "additionalInfo",
-	  "callback" : "checkLastPgFn"
-	  };
-
-	//window.messageHandler.postMessage(JSON.stringify(params));
-}
-
-
-function initVideo() {
-    var video = $("#asset2 video")[0]
-    video.onended = () => { open_page(null, 2) }
-}
-
-function initSound() {
-    $(document).on("click", "#radio01, #radio02", function() {
-        var audioYes = $("#yesaudio")[0]
-        var audioNo = $("#noaudio")[0]
-        var answer = $(this).data("answer")
-        if (answer == 'yes') {
-            audioYes.play()
-			$("#asset4").addClass("pulseIt");
-			$("#asset5").removeClass("pulseIt");
-        } else if (answer == 'no') {
-            audioNo.play()
-			$("#asset5").addClass("pulseIt");
-			$("#asset4").removeClass("pulseIt");
-        }
-    })
-}
-
-
-
-function playVid1() {
-	document.getElementById("startVideo").play();
-}
-
-function myFunction1() {
-	$('.blocker').css("display","none");
+/* 
+function trigger() {
+	$(".s7").addClass("s7-1");
+	$(".s8").addClass("s8-2");
+	$(".s9").addClass("s9-1");
+	$(".s10").addClass("s10-1");
+} */
+function trigger() {
 	go_nav('f');
-};
+}
 
-function myFunction2() {
-	$('#video2').css("display","none");
-	$('#asset1').css("display","block");
-	$('#asset2').css("display","block");
-	$('#asset3').css("display","block");
-	$('#asset4').css("display","block");
-	$('#asset5').css("display","block");
-	$('#asset6').css("display","block");
-	$('#asset7').css("display","block");
-};
+function kill() {
+	document.getElementById("chess").play();
+	$(".s2").addClass("s2-2");
+	$(".s3").addClass("s3-2");
+	$(".s4").addClass("s4-2");
+	$(".s5").addClass("s5-2");
+	$(".s6").addClass("s6-2");
+	$(".s7").addClass("s7-2");
+	$(".s9").addClass("s9-2");
+	$(".s10").addClass("s10-2");
+	$(".s11").addClass("s11-2");
+	setTimeout(function(){ 
+		go_nav('f');
+	}, 3000);
+}

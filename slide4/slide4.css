@@ -12,11 +12,11 @@
 
 .s2 {
 	position: absolute;
-  left: 352px;
-  top: 97px;
-  width: 170px;
-  height: 170px;
-	animation: pulseIt 1s infinite;
+  left: 50px;
+  top: 106px;
+  width: 425px;
+  height: 704px;
+	animation: slideInRight 0.7s;
 	animation-delay: 0.1s;
 	animation-fill-mode: both;
 	z-index: 5;
@@ -24,24 +24,24 @@
 
 .s3 {
 	position: absolute;
-  left: 488px;
-  top: 90px;
-  width: 170px;
-  height: 171px;
-	animation: pulseIt 1s infinite;
-	animation-delay: 0.2s;
+  left: 609px;
+  top: 64px;
+  width: 408px;
+  height: 514px;
+	animation: fadeInUp 1.5s ease-out;
+	animation-delay: 0.5s;
 	animation-fill-mode: both;
 	z-index: 5;
 }
 
 .s4 {
 	position: absolute;
-  left: 615px;
-  top: 123px;
-  width: 170px;
-  height: 171px;
-	animation: pulseIt 1s infinite;
-	animation-delay: 0.3s;
+  left: 535px;
+  top: 612px;
+  width: 495px;
+  height: 131px;
+	animation: zoomIn 0.5s;
+	animation-delay: 1.5s;
 	animation-fill-mode: both;
 	z-index: 5;
 }
