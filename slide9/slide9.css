@@ -1,0 +1,50 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.s1 {
+	position: absolute;
+	width: 1080px;
+	height: 810px;
+	z-index: 1;
+}
+
+.s2 {
+	position: absolute;
+  left: 0px;
+  top: 45px;
+  width: 422px;
+  height: 494px;
+	animation: zoomIn 0.5s;
+	animation-delay: 0.2s;
+	animation-fill-mode: both;
+	transform-origin: right;
+	z-index: 5;
+}
+
+.s3 {
+	position: absolute;
+  left: 285px;
+  top: 23px;
+  width: 676px;
+  height: 524px;
+	animation: zoomIn 0.5s;
+	animation-delay: 0.2s;
+	animation-fill-mode: both;
+	transform-origin: left;
+	z-index: 5;
+}
+
+.s4 {
+	position: absolute;
+  left: 62px;
+  top: 341px;
+  width: 575px;
+  height: 401px;
+	animation: zoomIn 0.5s;
+	animation-delay: 0.2s;
+	animation-fill-mode: both;
+	transform-origin: right;
+	z-index: 5;
+}

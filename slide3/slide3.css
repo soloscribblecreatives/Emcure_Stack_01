@@ -12,126 +12,161 @@
 
 .s2 {
 	position: absolute;
-  left: 352px;
-  top: 97px;
-  width: 170px;
-  height: 170px;
-	animation: pulseIt 1s infinite;
-	animation-delay: 0.1s;
+  left: 462px;
+  top: 173px;
+  width: 215px;
+  height: 39px;
+	animation: fadeInUp 0.5s;
+	animation-delay: 1s;
 	animation-fill-mode: both;
+	display: none;
 	z-index: 5;
 }
 
 .s3 {
 	position: absolute;
-  left: 488px;
-  top: 90px;
-  width: 170px;
-  height: 171px;
-	animation: pulseIt 1s infinite;
-	animation-delay: 0.2s;
+  left: 303px;
+  top: 220px;
+  width: 531px;
+  height: 71px;
+	animation: zoomIn 0.5s;
+	animation-delay: 1.2s;
 	animation-fill-mode: both;
+	display: none;
 	z-index: 5;
 }
 
 .s4 {
 	position: absolute;
-  left: 615px;
-  top: 123px;
-  width: 170px;
-  height: 171px;
-	animation: pulseIt 1s infinite;
-	animation-delay: 0.3s;
+  left: 359px;
+  top: 252px;
+  width: 307px;
+  height: 41px;
+	animation: flipInXFlash 0.5s;
+	animation-delay: 2s;
 	animation-fill-mode: both;
+	display: none;
 	z-index: 5;
 }
 
 .s5 {
 	position: absolute;
-  left: 722px;
-  top: 204px;
-  width: 170px;
-  height: 171px;
-	animation: pulseIt 1s infinite;
-	animation-delay: 0.4s;
+  left: 154px;
+  top: 325px;
+  width: 771px;
+  height: 210px;
+	animation: zoomIn 0.5s;
+	animation-delay: 3s;
 	animation-fill-mode: both;
+	display: none;
 	z-index: 5;
 }
 
 .s6 {
 	position: absolute;
-  left: 572px;
-  top: 409px;
-  width: 170px;
-  height: 171px;
-	animation: pulseIt 0.3s infinite;
-	animation-delay: 0.6s;
+  left: 237px;
+  top: 601px;
+  width: 664px;
+  height: 24px;
+	animation: fadeInDown 0.5s;
+	animation-delay: 3.5s;
 	animation-fill-mode: both;
+	display: none;
 	z-index: 5;
 }
 
 .s7 {
 	position: absolute;
-  left: 384px;
-  top: 466px;
-  width: 170px;
-  height: 170px;
-	animation: pulseIt 0.3s infinite;
-	animation-delay: 0.6s;
+  left: 0px;
+  top: 0px;
+  width: 540px;
+  height: 810px;
+	z-index: 10;
+}
+
+.slideOutLeft {
+	animation: slideOutLeft 3s;
+	animation-delay: 0s;
 	animation-fill-mode: both;
-	z-index: 5;
 }
 
 .s8 {
 	position: absolute;
-  left: 176px;
-  top: 331px;
-  width: 213px;
-  height: 213px;
-	animation: pulseIt 1s infinite;
+  left: 539px;
+  top: 0px;
+  width: 541px;
+  height: 810px;
+	z-index: 10;
+}
+
+.slideOutRight {
+	animation: slideOutRight 3s;
 	animation-delay: 0s;
 	animation-fill-mode: both;
-	z-index: 5;
 }
 
 .s9 {
 	position: absolute;
-  left: 323px;
-  top: 711px;
-  width: 434px;
-  height: 75px;
-	animation: zoomIn 0.5s;
+  left: 349px;
+  top: 241px;
+  width: 382px;
+  height: 382px;
+	animation: pulse 1s infinite;
 	animation-delay: 0s;
 	animation-fill-mode: both;
-	z-index: 5;
+	z-index: 15;
 }
 
-.s10 {
-	position: absolute;
-  left: 682px;
-  top: 446px;
-  width: 118px;
-  height: 78px;
-	animation: fadeInDownSmall 0.5s;
-	animation-delay: 3s;
-	animation-fill-mode: both;
-	z-index: 5;
-}
 
-@keyframes pulseIt {
+
+@keyframes flipInXFlash {
   from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-	opacity: 0;
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
   }
 
-  50% {
-    -webkit-transform: scale3d(1.05, 1.05, 1.05);
-    transform: scale3d(1.05, 1.05, 1.05);
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 5deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -1deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -1deg);
   }
 
   to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+	opacity: 1;
+  }
+	70%, 80%, 90% {opacity: 0;}
+	65%, 75%, 85%, 95% {opacity: 1;}
+}
+
+
+
+@keyframes fadeInDownSmall {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -20%, 0);
+    transform: translate3d(0, -20%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
