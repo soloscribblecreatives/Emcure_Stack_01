@@ -13,10 +13,10 @@
 .s2 {
 	position: absolute;
   left: 0px;
-  top: 45px;
+  top: 134px;
   width: 422px;
-  height: 494px;
-	animation: zoomIn 0.5s;
+  height: 405px;
+	animation: zoomIn 0.8s;
 	animation-delay: 0.2s;
 	animation-fill-mode: both;
 	transform-origin: right;
@@ -25,12 +25,12 @@
 
 .s3 {
 	position: absolute;
-  left: 285px;
-  top: 23px;
-  width: 676px;
-  height: 524px;
-	animation: zoomIn 0.5s;
-	animation-delay: 0.2s;
+  left: 432px;
+  top: 38px;
+  width: 529px;
+  height: 509px;
+	animation: zoomIn 0.8s;
+	animation-delay: 0.4s;
 	animation-fill-mode: both;
 	transform-origin: left;
 	z-index: 5;
@@ -42,8 +42,8 @@
   top: 341px;
   width: 575px;
   height: 401px;
-	animation: zoomIn 0.5s;
-	animation-delay: 0.2s;
+	animation: zoomIn 0.8s;
+	animation-delay: 0.5s;
 	animation-fill-mode: both;
 	transform-origin: right;
 	z-index: 5;

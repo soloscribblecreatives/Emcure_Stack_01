@@ -19,6 +19,7 @@
 	animation: revealHorizontal 1s;
 	animation-delay: 0.2s;
 	animation-fill-mode: both;
+	clip: rect(0px,0px,300px,0px);
 	z-index: 5;
 }
 

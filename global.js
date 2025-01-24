@@ -257,7 +257,7 @@ switch(pg_id){
 	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><div class="s1"><img src="slide2/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide2/s2.png"/></div><div class="s3"><img src="slide2/s3.png"/></div>';
 	break;
 	case 3:
-	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide3/s2.png"/></div><div class="s3"><img src="slide3/s3.png"/></div><div class="s4"><img src="slide3/s4.png"/></div><div class="s5"><img src="slide3/s5.png"/></div><div class="s6"><img src="slide3/s6.png"/></div><div class="s7"><img src="slide3/s7.png"/></div><div class="s8"><img src="slide3/s8.png"/></div><div class="s9" onclick="launch();"><img src="slide3/s9.png"/></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide3/s2.png"/></div><div class="s3"><img src="slide3/s3.png"/></div><div class="s4"><img src="slide3/s4.png"/></div><div class="s5"><img src="slide3/s5.png"/></div><div class="s6"><img src="slide3/s6.png"/></div><div class="s7"><img src="slide3/s7.png"/></div><div class="s8"><img src="slide3/s8.png"/></div><div class="s9"><img src="slide3/s9.png"/></div><div class="c1"><img src="slide3/c1.png"/></div><div class="c2"><img src="slide3/c2.png"/></div><div class="c3" onclick="launch();"><img src="slide3/c3.png"/></div>';
 	break;
 	case 4:
 	content='<link rel="stylesheet" type="text/css" href="slide4/slide4.css" media="screen"/><div class="s1"><img src="slide4/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide4/s2.png"/></div><div class="s3"><img src="slide4/s3.png"/></div><div class="s4"><img src="slide4/s4.png"/></div><div class="s5"><img src="slide4/s5.png"/></div><div class="s6"><img src="slide4/s6.png"/></div>';
@@ -440,7 +440,10 @@ function launch() {
 	$('.s4').css("display","block");
 	$('.s5').css("display","block");
 	$('.s6').css("display","block");
-	$('.s9').css("display","none");
-	$(".s7").addClass("slideOutLeft");
-	$(".s8").addClass("slideOutRight");
+	$('.s7').css("display","block");
+	$('.s8').css("display","block");
+	$('.s9').css("display","block");
+	$(".c1").addClass("slideOutLeft");
+	$(".c2").addClass("slideOutRight");
+	$('.c3').css("display","none");
 }
