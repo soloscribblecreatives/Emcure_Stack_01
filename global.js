@@ -263,16 +263,16 @@ switch(pg_id){
 	content='<link rel="stylesheet" type="text/css" href="slide4/slide4.css" media="screen"/><div class="s1"><img src="slide4/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide4/s2.png"/></div><div class="s3"><img src="slide4/s3.png"/></div><div class="s4"><img src="slide4/s4.png"/></div><div class="s5"><img src="slide4/s5.png"/></div><div class="s6"><img src="slide4/s6.png"/></div>';
 	break;
 	case 5:
-	content='<link rel="stylesheet" type="text/css" href="slide5/slide5.css" media="screen"/><div class="s1"><img src="slide5/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide5/s2.png"/></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide5/slide5.css" media="screen"/><div class="s1"><img src="slide5/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide5/s2.gif"/></div>';
 	break;
 	case 6:
-	content='<link rel="stylesheet" type="text/css" href="slide6/slide6.css" media="screen"/><div class="s1"><img src="slide6/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide6/s2.png"/></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide6/slide6.css" media="screen"/><div class="s1"><img src="slide6/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide6/s2.gif"/></div>';
 	break;
 	case 7:
-	content='<link rel="stylesheet" type="text/css" href="slide7/slide7.css" media="screen"/><div class="s1"><img src="slide7/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide7/s2.png"/></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide7/slide7.css" media="screen"/><div class="s1"><img src="slide7/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide7/s2.gif"/></div>';
 	break;
 	case 8:
-	content='<link rel="stylesheet" type="text/css" href="slide8/slide8.css" media="screen"/><div class="s1"><img src="slide8/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide8/s2.png"/></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide8/slide8.css" media="screen"/><div class="s1"><img src="slide8/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide8/s2.gif"/></div>';
 	break;
 	case 9:
 	content='<link rel="stylesheet" type="text/css" href="slide9/slide9.css" media="screen"/><div class="s1"><img src="slide9/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide9/s2.png"/></div><div class="s3"><img src="slide9/s3.png"/></div><div class="s4"><img src="slide9/s4.png"/></div>';
