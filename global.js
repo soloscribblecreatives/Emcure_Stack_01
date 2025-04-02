@@ -1,5 +1,5 @@
 var arrSurveyQuestions = {
-   9: "Are you interested?"
+   5: "Are you interested?"
 };
 /*Code by android developers start here*/
 var startLoc = null;
@@ -176,7 +176,7 @@ else{
 	
  } 
  
-	if(nextSlideNo <= 9){//number 3 is number of total slides present
+	if(nextSlideNo <= 5){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -227,7 +227,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	////window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	
 		//window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
@@ -244,15 +244,15 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	////window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	}
 	
 }else {
 	
-	if(page_id <= 9){
+	if(page_id <= 5){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 10){
+		if(page_id == 6){
             flag=1;
         }
 	}
@@ -272,7 +272,7 @@ if(direction == 'b') {
   };
 
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	////window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 		 //window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
         localStorage.setItem("gotoNextPrevBrand" ,0);
@@ -288,7 +288,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	////window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
   
     }
 
@@ -348,22 +348,10 @@ switch(pg_id){
 	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><img id="asset1" src="slide3/1.jpg" width="1080" height="810">';
 	break;
 	case 4:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><img id="asset1" src="slide4/1.jpg" width="1080" height="810">';
+	content='<link rel="stylesheet" type="text/css" href="slide4/slide1.css" media="screen"/><img onclick="tab1();" id="tab1" src="slide4/1.jpg" width="1080" height="810"><img onclick="tab2();" id="tab2" src="slide4/2.jpg" width="1080" height="810"><img onclick="tab3();" id="tab3" src="slide4/3.jpg" width="1080" height="810"><img onclick="tab4();" id="tab4" src="slide4/4.jpg" width="1080" height="810"><img onclick="tab5();" id="tab5" src="slide4/5.jpg" width="1080" height="810">';
 	break;
 	case 5:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><img id="asset1" src="slide5/1.jpg" width="1080" height="810">';
-	break;
-	case 6:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><img id="asset1" src="slide6/1.jpg" width="1080" height="810">';
-	break;
-	case 7:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><img id="asset1" src="slide7/1.jpg" width="1080" height="810">';
-	break;
-	case 8:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><img id="asset1" src="slide8/1.jpg" width="1080" height="810">';
-	break;
-	case 9:
-	content='<link rel="stylesheet" type="text/css" href="slide9/slide1.css" media="screen" /><img id="asset1" src="slide9/1.png" width="1080" height="810"><img id="asset2" src="slide9/2.png"><img id="asset3" src="slide9/3.png" ><audio id="yesaudio" playsinline><source src="slide9/yes.mp3"></source></audio><audio id="noaudio" playsinline><source src="slide9/no.mp3"></source></audio><audio id="ding" playsinline><source src="slide9/success.mp3"></source></audio>';
+	content='<link rel="stylesheet" type="text/css" href="slide5/slide1.css" media="screen" /><img id="asset1" src="slide5/1.png" width="1080" height="810"><img id="asset2" src="slide5/2.png"><img id="asset3" src="slide5/3.png" ><audio id="yesaudio" playsinline><source src="slide5/yes.mp3"></source></audio><audio id="noaudio" playsinline><source src="slide5/no.mp3"></source></audio><audio id="ding" playsinline><source src="slide5/success.mp3"></source></audio>';
 	break;
 }
 
@@ -453,13 +441,13 @@ function open_page2(url,page_id,count){
 	//alert(currentslide);
 	document.getElementById("click_through").innerHTML='';
 	
-	if(page_id == 9){
+	if(page_id == 5){
 		document.getElementById("click_through").innerHTML='<div class="slide02_inline_wraper" id="buttons">\
 		<div id="slide01_question01_choices01" class="control-group" onclick="initSound();">\
 			<label class="control control_radio"><div class="lbl_pos"></div><input type="radio" id="slide01_radio01_01" name="checkB01" value="Interested"/><div class="control_indicator" id="radio01" data-answer="yes" onclick="select1()"></div></label>\
 			<label class="control control_radio"><div class="lbl_pos"></div><input type="radio" id="slide01_radio01_02" name="checkB01" value="Not Interested"/><div class="control_indicator" id="radio02" data-answer="no" onclick="select2()"></div></label>\
 		</div>\
-			<div class="submit_button" onclick="savedata(1,1,9,\'' + page_id + '\');endTime1(9);hidesubmitonclick();"></div>\
+			<div class="submit_button" onclick="savedata(1,1,5,\'' + page_id + '\');endTime1(5);hidesubmitonclick();"></div>\
 		</div>';
 		
 		$('#slide01_question01_choices01').delay(10).fadeIn();
@@ -627,7 +615,7 @@ function savedata(answer,type,questionNumber,page_id) {
 	  "callback" : "checkLastPgFn"
 	  };
 
-	//window.messageHandler.postMessage(JSON.stringify(params));
+	////window.messageHandler.postMessage(JSON.stringify(params));
 }
 
 
@@ -647,4 +635,21 @@ function initSound() {
             audioNo.play()
         }
     })
+}
+
+
+function tab1() {
+	$("#tab2").css("display","block");
+}
+
+function tab2() {
+	$("#tab3").css("display","block");
+}
+
+function tab3() {
+	$("#tab4").css("display","block");
+}
+
+function tab4() {
+	$("#tab5").css("display","block");
 }
