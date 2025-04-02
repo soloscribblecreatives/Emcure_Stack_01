@@ -1,0 +1,63 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+#asset1 {
+    position: absolute;
+    width: 1080px;
+    height: 810px;
+	z-index: 1;
+}
+
+#asset2 {
+    position: absolute;
+  left: 405px;
+  top: 645px;
+  width: 64px;
+  height: 65px;
+  transform-origin: right bottom;
+	z-index: 3;
+}
+
+.yes {
+  	animation: swing 3s infinite;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+
+#asset3 {
+    position: absolute;
+  left: 589px;
+  top: 650px;
+  width: 64px;
+  height: 65px;
+  transform-origin: right top;
+	z-index: 3;
+}
+
+.no {
+  	animation: swing 3s infinite;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+
+
+@keyframes flipX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
