@@ -648,16 +648,6 @@ function savedata(answer,type,questionNumber,page_id) {
 
 //-----------------Animate JS-----------------//
 
-function tapOn() {
-	$('.s2').css('display','block');
-	$('.hand').css('display','none');
-	$('.tapOn').css('display','none');
-	setTimeout(function(){
-		go_nav('f');
-		$('.slide_arrow, .box, .box_btn').css('display','block');
-	}, 2500);
-}
-
 function goLeft() {
 	go_nav('b');
 }

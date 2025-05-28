@@ -51,9 +51,11 @@ function runAnimation() {
         }
       }
       const percent = clearPixels / (width * height);
-      if (percent > 0.6 && !revealed) {
+      if (percent > 0.90 && !revealed) {
         revealed = true;
-        alert("Bingo! You've revealed the image.");
+        setTimeout(function(){
+			go_nav('f');
+		}, 2000);
       }
     }
 
