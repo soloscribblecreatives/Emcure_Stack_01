@@ -10,6 +10,18 @@
 	z-index: 1;
 }
 
+.hand {
+  position: absolute;
+  left: 196px;
+  top: 379px;
+  width: 52px;
+  height: 67px;
+  	animation: scratchIt 0.2s 3;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+  z-index: 15;
+}
+
 .blocker {
 	position: absolute;
 	left: 0px;
@@ -45,5 +57,30 @@ canvas {
 
   15%, 50%, 95% {
     opacity: 1;
+  }
+}
+
+@keyframes scratchIt {
+  0% {
+  left: 178px;
+  top: 258px;
+  width: 52px;
+  height: 67px;
+  opacity: 1;
+  }
+
+  50% {
+  left: 399px;
+  top: 295px;
+  width: 52px;
+  height: 67px;
+  opacity: 1;
+  }
+  100% {
+  left: 178px;
+  top: 258px;
+  width: 52px;
+  height: 67px;
+  opacity: 1;
   }
 }

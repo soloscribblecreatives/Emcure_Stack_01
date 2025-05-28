@@ -44,7 +44,7 @@ var selectedContentPath = 'slide1/';
 
 $("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""></div>');
 
-$("#click_through").html('<div class="canvas-wrapper"><canvas id="bottomCanvas" width="738" height="396"></canvas><canvas id="topCanvas" width="738" height="396"></canvas></div><div class="hand"><img src="slide1/hand.png"></div><div class="goLeft" onclick="goLeft()"><img src="slide1/left.png"></div><div class="goRight" onclick="goRight()"><img src="slide1/right.png"></div><div class="blocker"></div>');
+$("#click_through").html('<div class="canvas-wrapper" ontouchstart="myFunc()"><canvas id="bottomCanvas" width="738" height="396"></canvas><canvas id="topCanvas" width="738" height="396"></canvas></div><div class="hand" ontouchstart="myFunc()"><img src="slide1/hand.png"></div><div class="goLeft" onclick="goLeft()"><img src="slide1/left.png"></div><div class="goRight" onclick="goRight()"><img src="slide1/right.png"></div><div class="blocker"></div>');
 
 runAnimation(); /* runAnimation() is the function called from animate.js file which has minified js */
 

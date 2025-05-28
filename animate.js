@@ -38,7 +38,7 @@ function runAnimation() {
       const pos = getPosition(e);
       topCtx.globalCompositeOperation = 'destination-out';
       topCtx.beginPath();
-      topCtx.arc(pos.x, pos.y, 50, 0, Math.PI * 2);
+      topCtx.arc(pos.x, pos.y, 50, 0, Math.PI * 2);  //50 is the size of the amount of scratch
       topCtx.fill();
     }
 
@@ -51,7 +51,7 @@ function runAnimation() {
         }
       }
       const percent = clearPixels / (width * height);
-      if (percent > 0.90 && !revealed) {
+      if (percent > 0.95 && !revealed) {  //0.95 detects 95% of the pixels scratched and then triggers any event
         revealed = true;
         setTimeout(function(){
 			go_nav('f');

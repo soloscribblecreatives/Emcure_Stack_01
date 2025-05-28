@@ -228,7 +228,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	
 		//window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
@@ -245,7 +245,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	}
 	
 }else {
@@ -273,7 +273,7 @@ if(direction == 'b') {
   };
 
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 		 //window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
         localStorage.setItem("gotoNextPrevBrand" ,0);
@@ -289,7 +289,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
   
     }
 
@@ -387,7 +387,7 @@ function open_page2(url,page_id,count){
 	document.getElementById("click_through").innerHTML='';
 
 	if(page_id == 1){
-		document.getElementById("click_through").innerHTML='<div class="canvas-wrapper"><canvas id="bottomCanvas" width="738" height="396"></canvas><canvas id="topCanvas" width="738" height="396"></canvas></div><div class="hand"><img src="slide1/hand.png"></div><div class="goLeft" onclick="goLeft()"><img src="slide1/left.png"></div><div class="goRight" onclick="goRight()"><img src="slide1/right.png"></div><div class="blocker"></div>';
+		document.getElementById("click_through").innerHTML='<div class="canvas-wrapper" ontouchstart="myFunc()"><canvas id="bottomCanvas" width="738" height="396"></canvas><canvas id="topCanvas" width="738" height="396"></canvas></div><div class="hand" ontouchstart="myFunc()"><img src="slide1/hand.png"></div><div class="goLeft" onclick="goLeft()"><img src="slide1/left.png"></div><div class="goRight" onclick="goRight()"><img src="slide1/right.png"></div><div class="blocker"></div>';
 		
 		$('.slide_arrow, .box, .box_btn').css('display','none');
 	}
@@ -642,7 +642,7 @@ function savedata(answer,type,questionNumber,page_id) {
 	  "callback" : "checkLastPgFn"
 	  };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe 
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe 
 }
 
 
@@ -654,4 +654,8 @@ function goLeft() {
 
 function goRight() {
 	go_nav('f');
+}
+
+function myFunc() {
+	$(".hand").css("display","none");
 }
