@@ -5,7 +5,7 @@
 <meta http-equiv="cache-control" content="max-age=200"/>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
-<title>Emgurukul</title>
+<title>Bestform</title>
 <link rel="stylesheet" type="text/css" href="animate.css" media="screen"/>
 <link rel="stylesheet" type="text/css" href="global.css" media="screen"/>
 
@@ -25,31 +25,30 @@
     <div class="box">
       <div class="slide_jumper">
 		  <div class="slides"><img src="thumbs/01.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/02.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/03.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/04.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/05.png" alt=""></div>
+          <div class="slides"><img src="thumbs/02.png" alt=""></div>
       </div>
     </div>
     <div class="box_btn"></div>
-<!-- 	<div class="blocker" onclick="playVid1()"></div> -->
 	<div id="myconsole"></div>
 	<div id="click_through"></div>
   </div>
 </div>
 
 <script src="global.js" type="text/javascript" language="javascript"></script> 
+<script src="animate.js" type="text/javascript" language="javascript"></script>
 <script>
 
 $(document).ready(function(){
-  // jQuery(".next").bind(event, function(){
-  //     document.location = 'VoltarenVAsb/VoltarenVAsb.html';
-  //     });
+
 var selectedContentPath = 'slide1/';
-//  document.getElementById("main_content").innerHTML='<object type="text/html" width="1024px" height="768px" data="'+selectedContentPath+"Dlight1.htm"+'"></object>';
 
+$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""></div>');
 
-$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1080" height="810" alt=""></div>');
+$("#click_through").html('<div class="canvas-wrapper"><canvas id="bottomCanvas" width="738" height="396"></canvas><canvas id="topCanvas" width="738" height="396"></canvas></div><div class="hand"><img src="slide1/hand.png"></div><div class="goLeft" onclick="goLeft()"><img src="slide1/left.png"></div><div class="goRight" onclick="goRight()"><img src="slide1/right.png"></div><div class="blocker"></div>');
+
+runAnimation(); /* runAnimation() is the function called from animate.js file which has minified js */
+
+$('.slide_arrow, .box, .box_btn').css('display','none');
 
 });
 </script> 

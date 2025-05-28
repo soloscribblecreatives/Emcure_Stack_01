@@ -1,0 +1,132 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.s1 {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+
+.s2 {
+	position: absolute;
+  left: 312px;
+  top: 28px;
+  width: 456px;
+  height: 25px;
+	animation: fadeInUp 0.5s;
+	animation-delay: 0.2s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s3 {
+	position: absolute;
+  left: 312px;
+  top: 65px;
+  width: 32px;
+  height: 29px;
+	animation: fadeInRightBig 0.5s;
+	animation-delay: 0.7s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s4 {
+	position: absolute;
+  left: 330px;
+  top: 87px;
+  width: 420px;
+  height: 95px;
+	animation: zoomIn 0.5s;
+	animation-delay: 1.2s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s5 {
+	position: absolute;
+  left: 330px;
+  top: 191px;
+  width: 420px;
+  height: 47px;
+	animation: fadeInUp 0.5s;
+	animation-delay: 1.2s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s6 {
+	position: absolute;
+  left: 258px;
+  top: 263px;
+  width: 564px;
+  height: 41px;
+	animation: flipInX 0.5s;
+	animation-delay: 2.2s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s7 {
+	position: absolute;
+  left: 62px;
+  top: 375px;
+  width: 169px;
+  height: 161px;
+	animation: zoomIn 0.5s;
+	animation-delay: 3.2s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s8 {
+	position: absolute;
+  left: 244px;
+  top: 375px;
+  width: 169px;
+  height: 161px;
+	animation: zoomIn 0.5s;
+	animation-delay: 3.4s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s9 {
+	position: absolute;
+  left: 62px;
+  top: 539px;
+  width: 169px;
+  height: 173px;
+	animation: zoomIn 0.5s;
+	animation-delay: 3.6s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s10 {
+	position: absolute;
+  left: 244px;
+  top: 539px;
+  width: 169px;
+  height: 173px;
+	animation: zoomIn 0.5s;
+	animation-delay: 3.8s;
+	animation-fill-mode: both;
+	z-index: 5;
+}
+
+.s11 {
+	position: absolute;
+  left: 458px;
+  top: 416px;
+  width: 247px;
+  height: 235px;
+	animation: zoomIn 0.5s;
+	animation-delay: 4.8s;
+	animation-fill-mode: both;
+	transform-origin: bottom left;
+	z-index: 5;
+}

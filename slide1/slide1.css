@@ -3,58 +3,47 @@
 	padding: 0px;
 }
 
-.background {
-    position: absolute;
-    width: 1080px;
-    height: 810px;
+.background, .s1 {
+	position: absolute;
+	width: 1080px;
+	height: 810px;
 	z-index: 1;
 }
 
-#tab1 {
-    position: absolute;
-	top: 0px;
+.blocker {
+	position: absolute;
 	left: 0px;
-    width: 1080px;
-    height: 810px;
-	z-index: 1;
-}
-
-#tab2 {
-    position: absolute;
-	top: 0px;
-	left: 0px;
-    width: 1080px;
-    height: 810px;
-	display: none;
-	z-index: 2;
-}
-
-#tab3 {
-    position: absolute;
-	top: 0px;
-	left: 0px;
-    width: 1080px;
-    height: 810px;
-	display: none;
-	z-index: 3;
-}
-
-#tab4 {
-    position: absolute;
-	top: 0px;
-	left: 0px;
-    width: 1080px;
-    height: 810px;
-	display: none;
-	z-index: 4;
-}
-
-#tab5 {
-    position: absolute;
-	top: 0px;
-	left: 0px;
-    width: 1080px;
-    height: 810px;
-	display: none;
+    top: 0px;
+	width: 1080px;
+	height: 810px;
 	z-index: 5;
+}
+    
+.canvas-wrapper {
+    position: absolute;
+  left: 170px;
+  top: 251px;
+  width: 738px;
+  height: 396px;
+	z-index: 10;
+}
+    
+canvas {
+    position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 738px;
+  height: 396px;
+    touch-action: none;
+	z-index: 10;
+}
+
+@keyframes flashLong {
+  0%,  100% {
+    opacity: 0;
+  }
+
+  15%, 50%, 95% {
+    opacity: 1;
+  }
 }
