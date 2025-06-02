@@ -387,7 +387,7 @@ function open_page2(url,page_id,count){
 	document.getElementById("click_through").innerHTML='';
 
 	if(page_id == 1){
-		document.getElementById("click_through").innerHTML='<div class="canvas-wrapper" ontouchstart="myFunc()"><canvas id="bottomCanvas" width="738" height="396"></canvas><canvas id="topCanvas" width="738" height="396"></canvas></div><div class="hand" ontouchstart="myFunc()"><img src="slide1/hand.png"></div><div class="goLeft" onclick="goLeft()"><img src="slide1/left.png"></div><div class="goRight" onclick="goRight()"><img src="slide1/right.png"></div><div class="blocker"></div>';
+		document.getElementById("click_through").innerHTML='<div class="canvas-wrapper" ontouchstart="myFunc1()" ontouchend="myFunc2()"><canvas id="bottomCanvas" width="738" height="396"></canvas><canvas id="topCanvas" width="738" height="396"></canvas></div><div class="hand" ontouchstart="myFunc()"><img src="slide1/hand.png"></div><div class="goLeft" onclick="goLeft()"><img src="slide1/left.png"></div><div class="goRight" onclick="goRight()"><img src="slide1/right.png"></div><div class="blocker"></div>';
 		
 		$('.slide_arrow, .box, .box_btn').css('display','none');
 	}
@@ -656,6 +656,10 @@ function goRight() {
 	go_nav('f');
 }
 
-function myFunc() {
+function myFunc1() {
 	$(".hand").css("display","none");
+}
+
+function myFunc2() {
+	$("#topCanvas").css("display","none");
 }
