@@ -53,9 +53,9 @@ function runAnimation() {
       const percent = clearPixels / (width * height);
       if (percent > 0.15 && !revealed) {  //0.95 detects 95% of the pixels scratched and then triggers any event
         revealed = true;
-        setTimeout(function(){
-			go_nav('f');
-		}, 5000);
+      //  setTimeout(function(){
+		//	go_nav('f');
+		//}, 5000);
       }
     }
 
