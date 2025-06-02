@@ -39,6 +39,12 @@
   height: 396px;
 	z-index: 10;
 }
+
+.fadeOut {
+	animation: fadeOut 0.2s;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
     
 canvas {
     position: absolute;

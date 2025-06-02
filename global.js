@@ -660,3 +660,6 @@ function myFunc1() {
 	$(".hand").css("display","none");
 }
 
+function myFunc2() {
+	$("#topCanvas").addClass("fadeOut");
+}
