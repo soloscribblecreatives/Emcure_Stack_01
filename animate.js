@@ -38,7 +38,7 @@ function runAnimation() {
       const pos = getPosition(e);
       topCtx.globalCompositeOperation = 'destination-out';
       topCtx.beginPath();
-      topCtx.arc(pos.x, pos.y, 50, 0, Math.PI * 2);  //50 is the size of the amount of scratch
+      topCtx.arc(pos.x, pos.y, 150, 0, Math.PI * 2);  //80 is the size of the amount of scratch
       topCtx.fill();
     }
 

@@ -489,7 +489,7 @@ function hidesubmitonclick()
 function goRight() {
 	setTimeout(function(){
 		go_nav('f');
-	}, 1000);
+	}, 2000);
 }
 
 function select1() {
