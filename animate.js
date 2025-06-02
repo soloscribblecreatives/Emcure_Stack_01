@@ -55,7 +55,7 @@ function runAnimation() {
         revealed = true;
         setTimeout(function(){
 			go_nav('f');
-		}, 2000);
+		}, 5000);
       }
     }
 

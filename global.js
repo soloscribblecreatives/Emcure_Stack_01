@@ -486,12 +486,6 @@ function hidesubmitonclick()
 	goRight();
 }
 
-function goRight() {
-	setTimeout(function(){
-		go_nav('f');
-	}, 5000);
-}
-
 function select1() {
 	$(".s1").css("display","block");
 	$(".s2,.s3,.s4,.s5,.s6,.s7").css("display","none");
