@@ -1,0 +1,139 @@
+.background {
+    position: absolute;
+    z-index: 1;
+}
+
+
+.title1{
+    position: absolute;
+   top: 137px;
+    left: 64px;
+    width: 244px;
+    height: 110px;
+    z-index: 2;
+    animation: zzomIn 2s forwards;
+    -webkit-animation: zoomIn 2s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+
+
+
+}
+
+.title1 img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.title2{
+    position: absolute;
+    top: 239px;
+    left: 66px;
+    width: 42px;
+    height: 20.3px;
+    z-index: 2;
+    animation: fadeIn 2s forwards;
+    -webkit-animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+
+
+
+}
+
+.title2 img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
+.title3{
+    position: absolute;
+     top: 239px;
+    left: 140px;
+    width: 80px;
+    height: 20.3px;
+    z-index: 1;
+    animation: fadeIn 2.5s forwards;
+    -webkit-animation: fadeIn 2.5s forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+.title3 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.title4{
+    position: absolute;
+   top: 239px;
+    left: 250px;
+    width: 40px;
+    height: 20.3px;
+    z-index: 1;
+    animation: fadeIn 2s forwards;
+    -webkit-animation: fadeIn 2s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+.title4 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.title5{
+       position: absolute;
+      top: 659px;
+    left: 55px;
+    width: 493px;
+    height: 106.3px;
+    z-index: 1;
+    animation: fadeIn 2s forwards;
+    -webkit-animation: fadeIn 2s forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+.title5 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.title6{
+    position: absolute;
+    top: 607px;
+    right: 309px;
+    z-index: 2;
+    animation: fadeIn 2s forwards;
+    -webkit-animation: fadeIn 2s forwards;
+    width: 112px;
+    height: auto;
+    animation-delay: 3.2s;
+    opacity: 0;
+
+
+
+
+}
+
+.title6 img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
