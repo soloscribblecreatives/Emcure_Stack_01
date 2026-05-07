@@ -1,6 +1,80 @@
-.background {
-	position: absolute;
-	width: 1080px;
-	height: 810px;
-	z-index: 1;
+*{
+margin: 0px;
+padding: 0px;
+}
+
+.begin {
+position: absolute;
+left: 312px;
+top: 628px;
+width: 457px;
+height: 146px;
+z-index: 20;
+}
+
+.s1 {
+position: absolute;
+width: 1080px;
+height: 810px;
+z-index: 1;
+}
+
+.s2 {
+position: absolute;
+left: 146px;
+top: 189px;
+width: 788px;
+height: 48px;
+animation: fadeInUp 0.5s;
+animation-delay: 0.1s;
+animation-fill-mode: both;
+z-index: 5;
+}
+
+.s3 {
+position: absolute;
+left: 216px;
+top: 245px;
+width: 645px;
+height: 47px;
+animation: fadeInUp 0.5s;
+animation-delay: 0.2s;
+animation-fill-mode: both;
+z-index: 5;
+}
+
+.s4 {
+position: absolute;
+left: 261px;
+top: 300px;
+width: 558px;
+height: 38px;
+animation: fadeInUp 0.5s;
+animation-delay: 0.3s;
+animation-fill-mode: both;
+z-index: 5;
+}
+
+.s5 {
+position: absolute;
+left: 345px;
+top: 378px;
+width: 405px;
+height: 86px;
+animation: bounceIn 0.3s;
+animation-delay: 1s;
+animation-fill-mode: both;
+z-index: 5;
+}
+
+.s6 {
+position: absolute;
+left: 372px;
+top: 650px;
+width: 336px;
+height: 102px;
+animation: pulse 1s infinite;
+animation-delay: 1s;
+animation-fill-mode: both;
+z-index: 5;
 }
