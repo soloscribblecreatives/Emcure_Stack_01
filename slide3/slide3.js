@@ -9,7 +9,7 @@ var visibleItems = 5;
 var isSpinning = false;
 var lockedValue = null;
 var currentTop = 0;
-var wheelSpeed = 7;
+var wheelSpeed = 5;
 var animationId = null;
 var stopReady = false;
 
@@ -55,6 +55,10 @@ function buildWheel() {
 }
 
 buildWheel();
+
+setTimeout(function () {
+  updateCenterResult();
+}, 000);
 
 function startWheel() {
 
@@ -175,7 +179,7 @@ function stopWheelByUser() {
           $("#resultImage").hide();
           $("#retry").css("display", "block");
           $("#lock").css("display", "block");
-        }, 2000);
+        }, 1000);
       }
     }
   );

@@ -20,11 +20,11 @@ src: url("../fonts/arial-bold.ttf") format("truetype");
 }
 
 #gameCanvas {
-width: 1080px;
-height: 810px;
-top: 120px;
-left: 50px;
-position: relative;
+width: 360px;
+height: 397px;
+top: 323px;
+left: 400px;
+position: absolute;
 margin: 0 auto;
 overflow: hidden;
 z-index: 20;
@@ -34,8 +34,8 @@ z-index: 20;
 width: 250px;
 height: 400px;
 position: absolute;
-left: 415px;
-top: 205px;
+left: 55px;
+top: 0px;
 overflow: hidden;
 font-family: "ArialAlert";
 border-radius: 18px;
@@ -49,6 +49,42 @@ position: absolute;
 width: 250px;
 top: 0;
 left: 0;
+}
+
+.pointer {
+position: absolute;
+top: 172px;
+width: 0;
+height: 0;
+z-index: 20;
+}
+
+.pointer.left {
+left: 0px;
+border-top: 30px solid transparent;
+border-bottom: 30px solid transparent;
+border-left: 45px solid #ff304f;
+}
+
+.pointer.right {
+left: 315px;
+border-top: 30px solid transparent;
+border-bottom: 30px solid transparent;
+border-right: 45px solid #ff304f;
+}
+
+.centerGlow {
+position: absolute;
+left: 45px;
+top: 160px;
+width: 270px;
+height: 80px;
+border: 4px solid #ee3f5f;
+border-radius: 15px;
+z-index: 5;
+pointer-events: none;
+box-shadow: 0 0 22px #ee3f5f;
+z-index: 30;
 }
 
 .prize {
@@ -80,28 +116,6 @@ z-index: 20;
   transition:
     background 0.08s linear,
     transform 0.08s linear;
-}
-
-.pointer {
-position: absolute;
-top: 375px;
-width: 0;
-height: 0;
-z-index: 20;
-}
-
-.pointer.left {
-left: 355px;
-border-top: 30px solid transparent;
-border-bottom: 30px solid transparent;
-border-left: 45px solid #ff304f;
-}
-
-.pointer.right {
-left: 680px;
-border-top: 30px solid transparent;
-border-bottom: 30px solid transparent;
-border-right: 45px solid #ff304f;
 }
 
 #startBtn {
@@ -147,7 +161,7 @@ animation: none;
 
 #resultImage {
 position: absolute;
-left: 67px;
+left: 60px;
 top: 488px;
 width: 276px;
 height: 107px;
@@ -163,21 +177,6 @@ width: 220px;
 display: none;
 z-index: 20;
 }
-
-.centerGlow {
-position: absolute;
-left: 405px;
-top: 362px;
-width: 270px;
-height: 84px;
-border: 4px solid #ee3f5f;
-border-radius: 15px;
-z-index: 5;
-pointer-events: none;
-box-shadow: 0 0 22px #ee3f5f;
-z-index: 30;
-}
-
 
 #retry {
   position: absolute;
