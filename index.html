@@ -5,7 +5,7 @@
 <meta http-equiv="cache-control" content="max-age=200"/>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
-<title>Poviztra Spinwheel</title>
+<title>Poviztra Confidence Game</title>
 <link rel="stylesheet" type="text/css" href="animate.css" media="screen"/>
 <link rel="stylesheet" type="text/css" href="global.css" media="screen"/>
 
@@ -25,11 +25,6 @@
     <div class="box">
       <div class="slide_jumper">
 		  <div class="slides"><img src="thumbs/01.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/02.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/03.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/04.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/05.png" alt=""></div>
-		  <div class="slides"><img src="thumbs/06.png" alt=""></div>
       </div>
     </div>
     <div class="box_btn"></div>
@@ -39,10 +34,8 @@
 </div>
 
 <script src="global.js" type="text/javascript" language="javascript"></script>
-<script src="slide2/slide2.js" type="text/javascript" language="javascript"></script>
-<script src="slide3/slide3.js" type="text/javascript" language="javascript"></script>
+<script src="slide1/slide1.js" type="text/javascript" language="javascript"></script>
 <script>
-
 $(document).ready(function(){
   // jQuery(".next").bind(event, function(){
   //     document.location = 'VoltarenVAsb/VoltarenVAsb.html';
@@ -50,18 +43,9 @@ $(document).ready(function(){
 var selectedContentPath = 'slide1/';
 //  document.getElementById("main_content").innerHTML='<object type="text/html" width="1080px" height="810px" data="'+selectedContentPath+"Dlight1.htm"+'"></object>';
 
+$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div id="povGame" class="pov-game"><div class="pov-bg-top"></div><div class="pov-bg-bottom"></div><div class="pov-header"><div class="pov-ribbon">THE POVIZTRA OPEN CHALLENGE</div><h1>Build your <span>confidence</span></h1><p>Select any <b>5 parameters</b> that matters most</p></div><div id="povLeftPanel" class="pov-left-panel"><div class="pov-panel-title">Available Parameters</div><div id="povParameterList" class="pov-parameter-list"></div></div><div id="povActionPanel" class="pov-action-panel"><button id="povRetryBtn" class="pov-red-btn">Retry</button><button id="povProceedBtn" class="pov-green-btn">Proceed</button></div><div id="povFuturePanel" class="pov-future-panel"><img id="povFutureImage" src="slide1/final-image.png" alt=""><div id="povFutureText">Future provision text can be edited here.</div></div><div class="pov-wheel-wrap"><svg id="povWheelSvg" viewBox="0 0 620 620" class="pov-wheel-svg" aria-hidden="true"><defs><linearGradient id="povIdleGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff6d2"/><stop offset="55%" stop-color="#ffc21b"/><stop offset="100%" stop-color="#f3a600"/></linearGradient><linearGradient id="povFillGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#19235f"/><stop offset="50%" stop-color="#23348a"/><stop offset="100%" stop-color="#ef3d65"/></linearGradient><filter id="povGlow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g id="povWheelPaths"></g></svg><div id="povWheelLabels" class="pov-wheel-labels"></div><div id="povCenterCircle" class="pov-center-circle"><div id="povCenterPercent" class="pov-center-percent">0%</div><div id="povCenterText" class="pov-center-text">SELECT<br>ANY 5<br>PARAMETERS</div></div></div><div id="povBottomNote" class="pov-bottom-note">Tap a parameter to begin.</div><div id="povPopupOverlay" class="pov-popup-overlay"><div class="pov-popup-box"><button id="povPopupClose" class="pov-popup-close">×</button><img id="povPopupIcon" class="pov-popup-icon" src="" alt=""><div id="povPopupParameter" class="pov-popup-parameter"></div><div id="povPopupUSP" class="pov-popup-usp"></div><div class="pov-popup-copy">This selected parameter has been added to the confidence wheel.</div></div></div></div>');
 
-$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><audio preload="auto" id="intro" src="slide1/intro.mp3" type="audio/mpeg"></audio>');
-
-$("#click_through").html('<div class="blocker"></div><div class="begin" onclick="begin()"></div>');
-		
-setTimeout(function(){
-	intro();
-}, 1000);
-
-function intro(){
-	document.getElementById("intro").play();
-}
+if (typeof initPoviztraGame === "function") { initPoviztraGame(); }
 
 });
 </script> 

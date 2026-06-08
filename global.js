@@ -1,5 +1,5 @@
 var arrSurveyQuestions = {
-   3: "Starting price for the original?"
+   3: "Parameters?"
 };
 /*Code by android developers start here*/
 var startLoc = null;
@@ -176,7 +176,7 @@ else{
 	
  } 
  
-	if(nextSlideNo <= 6){//number 3 is number of total slides present
+	if(nextSlideNo <= 1){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -227,7 +227,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	
 		//window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
@@ -244,15 +244,15 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	}
 	
 }else {
 	
-	if(page_id <= 6){
+	if(page_id <= 1){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 7){
+		if(page_id == 2){
             flag=1;
         }
 	}
@@ -272,7 +272,7 @@ if(direction == 'b') {
   };
 
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 		 //window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
         localStorage.setItem("gotoNextPrevBrand" ,0);
@@ -288,7 +288,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
   
     }
 
@@ -339,22 +339,7 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><audio preload="auto" id="intro" src="slide1/intro.mp3" type="audio/mpeg"></audio>';
-	break;
-	case 2:
-	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><div class="s1"><img src="slide2/s1.png" width="1080" height="810"/></div><audio preload="auto" id="cardflip" src="slide2/cardflip.mp3" type="audio/mpeg"></audio><audio preload="auto" id="success" src="slide2/success.mp3" type="audio/mpeg"></audio><script>runAnimationCard()</script>';
-	break;
-	case 3:
-	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/s1.png" width="1080" height="810"/></div><audio preload="auto" id="spin" src="slide3/spin.mp3" type="audio/mpeg"></audio><audio preload="auto" id="fanfare" src="slide3/fanfare.mp3" type="audio/mpeg"></audio><audio preload="auto" id="wrong" src="slide3/wrong.mp3" type="audio/mpeg"></audio><script>runAnimationWheel()</script>';
-	break;	
-	case 4:
-	content='<link rel="stylesheet" type="text/css" href="slide4/slide4.css" media="screen"/><div class="s1"><img src="slide4/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide4/s2.png"/></div><div class="s3"><img src="slide4/s3.png"/></div><div class="s4"><img src="slide4/s4.png"/></div><div class="s5"><img src="slide4/s5.png"/></div><div class="s6w"><div class="s6"><img src="slide4/s6.png"/></div></div><div class="s7"><img src="slide4/s7.png"/></div><div class="s8"><img src="slide4/s8.png"/></div><audio preload="auto" id="launch" src="slide4/launch.mp3" type="audio/mpeg"></audio>';
-	break;
-	case 5:
-	content='<link rel="stylesheet" type="text/css" href="slide5/slide5.css" media="screen"/><div class="s1"><img src="slide5/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide5/s2.png"/></div><div class="s3"><img src="slide5/s3.png"/></div><div class="s4"><img src="slide5/s4.png"/></div><div class="s5"><img src="slide5/s5.png"/></div><div class="s6"><img src="slide5/s6.png"/></div><div class="s7"><img src="slide5/s7.png"/></div><div class="s8"><img src="slide5/s8.png"/></div><audio preload="auto" id="swoosh" src="slide5/swoosh.mp3" type="audio/mpeg"></audio><audio preload="auto" id="stack" src="slide5/stack.mp3" type="audio/mpeg"></audio>';
-	break;
-	case 6:
-	content='<link rel="stylesheet" type="text/css" href="slide6/slide6.css" media="screen"/><div class="s1"><img src="slide6/s1.png" width="1080" height="810" alt=""/></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div id="povGame" class="pov-game"><div class="pov-bg-top"></div><div class="pov-bg-bottom"></div><div class="pov-header"><div class="pov-ribbon">THE POVIZTRA OPEN CHALLENGE</div><h1>Build your <span>confidence</span></h1><p>Select any <b>5 parameters</b> that matters most</p></div><div id="povLeftPanel" class="pov-left-panel"><div class="pov-panel-title">Available Parameters</div><div id="povParameterList" class="pov-parameter-list"></div></div><div id="povActionPanel" class="pov-action-panel"><button id="povRetryBtn" class="pov-red-btn">Retry</button><button id="povProceedBtn" class="pov-green-btn">Proceed</button></div><div id="povFuturePanel" class="pov-future-panel"><img id="povFutureImage" src="slide1/final-image.png" alt=""><div id="povFutureText">Future provision text can be edited here.</div></div><div class="pov-wheel-wrap"><svg id="povWheelSvg" viewBox="0 0 620 620" class="pov-wheel-svg" aria-hidden="true"><defs><linearGradient id="povIdleGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff6d2"/><stop offset="55%" stop-color="#ffc21b"/><stop offset="100%" stop-color="#f3a600"/></linearGradient><linearGradient id="povFillGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#19235f"/><stop offset="50%" stop-color="#23348a"/><stop offset="100%" stop-color="#ef3d65"/></linearGradient><filter id="povGlow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g id="povWheelPaths"></g></svg><div id="povWheelLabels" class="pov-wheel-labels"></div><div id="povCenterCircle" class="pov-center-circle"><div id="povCenterPercent" class="pov-center-percent">0%</div><div id="povCenterText" class="pov-center-text">SELECT<br>ANY 5<br>PARAMETERS</div></div></div><div id="povBottomNote" class="pov-bottom-note">Tap a parameter to begin.</div><div id="povPopupOverlay" class="pov-popup-overlay"><div class="pov-popup-box"><button id="povPopupClose" class="pov-popup-close">×</button><img id="povPopupIcon" class="pov-popup-icon" src="" alt=""><div id="povPopupParameter" class="pov-popup-parameter"></div><div id="povPopupUSP" class="pov-popup-usp"></div><div class="pov-popup-copy">This selected parameter has been added to the confidence wheel.</div></div></div></div><script>initPoviztraGame();</script>';
 	break;
 }
 
@@ -446,54 +431,12 @@ function open_page2(url,page_id,count){
 	
 	if(page_id == 1){
 		document.getElementById("click_through").innerHTML='<div class="blocker"></div><div class="begin" onclick="begin()"></div>';
-		
-		setTimeout(function(){
-			intro();
-		}, 0000);
-
-		function intro(){
-			document.getElementById("intro").play();
-		}
 	}
 
 	if(page_id == 2){
-		document.getElementById("click_through").innerHTML='<div class="blocker1"></div><div class="s2"><img src="slide2/s2.png"></div><div class="s3"><img src="slide2/s3.png"></div><div class="cards-holder"><div class="card-wrapper" data-card="1"><div class="card-inner"><div class="card-face card-front"><img src="slide2/card1.png"></div><div class="card-face card-back"><img src="slide2/dark1.png"></div></div></div><div class="card-wrapper" data-card="2"><div class="card-inner"><div class="card-face card-front"><img src="slide2/card2.png"></div><div class="card-face card-back"><img src="slide2/dark2.png"></div></div></div><div class="card-wrapper" data-card="3"><div class="card-inner"><div class="card-face card-front"><img src="slide2/card3.png"></div><div class="card-face card-back"><img src="slide2/dark3.png"></div></div></div></div>';
+		document.getElementById("click_through").innerHTML='<div class="blocker1"></div>';
 	}
-	
-	if(page_id == 3){
-		document.getElementById("click_through").innerHTML='<div class="blocker1"></div><div id="gameCanvas"><div class="pointer left"></div><div class="pointer right"></div><div class="centerGlow"></div><div id="wheelWindow"><div id="wheelStrip"></div></div></div><img id="startBtn" src="slide3/start.png"><img id="stopBtn" src="slide3/stop.png"><img id="resultImage" src=""><div id="retry" class="game-btn retry-btn"><span class="icon">🔁</span><span class="text">RETRY</span></div><div id="lock" class="game-btn lock-btn"><span class="icon">🔒</span><span class="text">LOCK</span></div>';
-	}
-	if(page_id == 4){
-		document.getElementById("click_through").innerHTML='';
-		
-		setTimeout(function(){
-			launch();
-		}, 0000);
 
-		function launch(){
-			document.getElementById("launch").play();
-		}
-	}
-	
-	if(page_id == 5){
-		document.getElementById("click_through").innerHTML='';
-		
-		setTimeout(function(){
-			swoosh();
-		}, 0100);
-
-		function swoosh(){
-			document.getElementById("swoosh").play();
-		}
-		
-		setTimeout(function(){
-			stack();
-		}, 600);
-
-		function stack(){
-			document.getElementById("stack").play();
-		}
-	}
 }
 
 	function checkBtns(refNum){
@@ -621,7 +564,7 @@ function savedata(answer,type,questionNumber,page_id) {
 	  "callback" : "checkLastPgFn"
 	  };
 
-	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe 
+	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe 
 }
 
 function begin() {
