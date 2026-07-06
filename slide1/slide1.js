@@ -23,24 +23,37 @@ var POV_GAME_CONFIG = {
     success: 'slide1/complete-100.wav'
   },
 
-  finalImage: 'slide1/final-image.png',
-  finalText: 'Provision to add next step or go to next page.',
+  finalImage: 'slide1/shield.png',
+  finalText: 'You selected the parameters that matter the most,\nPoviztra delivers across every confidence driver – helping you prescribe with confidence every time.',
 
   parameters: [
     { parameter: 'QUALITY', usp: 'rDNA Technology', icon: 'slide1/quality.png' },
-    { parameter: 'ACCESSIBILITY', usp: 'Starts 3999/- Onwards', icon: 'slide1/accessibility.png' },
-    { parameter: 'DEVICE EXPERIENCE', usp: 'FlexTouch Device', icon: 'slide1/device.png' },
-    { parameter: 'CLINICAL FINDINGS', usp: '50 Phase 3 Clinical Trials Conducted', icon: 'slide1/clinical.png' },
-    { parameter: 'CARDIO\nVASCULAR OUTCOMES', usp: 'Score Trial And Steer Trials', icon: 'slide1/cardiovascular.png' },
-    { parameter: 'STORAGE & TRANSPORT', usp: 'Robust & Reliable Cold-Chain', icon: 'slide1/storage.png' },
-    { parameter: 'REGULATORY APPROVALS', usp: 'Approved By EMA, FDA, PMDA', icon: 'slide1/regulatory.png' },
-    { parameter: 'REAL WORLD EXPERIENCE', usp: '49M Patient-Years Of Experience', icon: 'slide1/real-world.png' }
+    { parameter: 'PRICE', usp: 'Starts 3999/- Onwards', icon: 'slide1/price.png' },
+    { parameter: 'DEVICE\nEXPERIENCE', usp: 'FlexTouch Device', icon: 'slide1/device.png' },
+    { parameter: 'CLINICAL\nFINDINGS', usp: '50 Phase 3 Clinical Trials Conducted', icon: 'slide1/clinical.png' },
+    { parameter: 'CARDIO VASCULAR OUTCOMES', usp: 'Score Trial And Steer Trials', icon: 'slide1/cardiovascular.png' },
+    { parameter: 'STORAGE &\nTRANSPORT', usp: 'Robust & Reliable Cold-Chain', icon: 'slide1/storage.png' },
+    { parameter: 'REGULATORY\nAPPROVALS', usp: 'Approved By EMA, FDA, PMDA', icon: 'slide1/regulatory.png' },
+    { parameter: 'REAL WORLD\nEXPERIENCE', usp: '49M Patient-Years Of Experience', icon: 'slide1/real-world.png' }
   ]
 };
 
 var povSelectedItems = [];
 var povGameReady = false;
 var povAudioContext = null;
+
+var povIntroSound = new Audio('slide1/intro.wav');
+
+povIntroSound.preload = 'auto';
+povIntroSound.volume = Math.min(POV_GAME_CONFIG.soundVolume, 1);
+povIntroSound.load();
+
+function playPovIntroSound() {
+  if (!POV_GAME_CONFIG.soundEnabled) return;
+
+  povIntroSound.currentTime = 0;
+  povIntroSound.play().catch(function () {});
+}
 
 function runAnimationWheel() {
   initPoviztraGame();
@@ -60,6 +73,10 @@ function initPoviztraGame() {
   buildPovButtons();
   bindPovEvents();
   resetPovGame();
+
+  setTimeout(function () {
+    playPovIntroSound();
+  }, 300);
 }
 
 function buildPovButtons() {
@@ -277,14 +294,14 @@ function showPovCompletedState() {
 
   setTimeout(function () {
 	 $('#povCenterCircle').addClass('final pov-success-pulse');
-	 $('#povCenterText').html('<b><span class="poviztraText">Poviztra</span></b> Complete Confidence,<br>Complete Care');
+	 $('#povCenterText').html('<img class="poviztraShield" src="slide1/shield.png"/><b><span class="poviztraText">Poviztra</span></b> Complete Confidence,<br>Complete Care');
 	 playPovSuccessSound();
 
      $('#povLeftPanel').fadeOut(220, function () {
       $('#povActionPanel').fadeIn(220);
      });
 
-     $('#povBottomNote').html('You chose the parameters. <span>Poviztra delivers the answers.</span>');
+     $('#povBottomNote').html('Whatever builds your confidence, <span>Poviztra delivers with confidence.</span>');
   }, 1000);   // 1000 = 1 second delay
   
   flashPovGame(true);
@@ -300,7 +317,7 @@ function showPovFuturePanel() {
 
     setTimeout(function () {
       $('#povFuturePanel').fadeIn(320);
-    }, 500);
+    }, 000);
   });
 }
 
@@ -320,8 +337,8 @@ function resetPovGame() {
 
   $('#povCenterCircle').removeClass('final pov-center-pop pov-success-pulse');
   $('#povCenterPercent').text('0%').show();
-  $('#povCenterText').html('SELECT<br>ANY 5<br>PARAMETERS');
-  $('#povBottomNote').text('Tap a parameter to begin.');
+  $('#povCenterText').html('SELECT ANY 5<br>PARAMETERS');
+  $('#povBottomNote').text('Tap a parameter to begin 👆🏻');
 
   $('#povPopupOverlay, #povActionPanel, #povFuturePanel').hide();
   $('#povFutureImage').show();

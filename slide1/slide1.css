@@ -175,16 +175,17 @@
 }
 
 .pov-panel-title {
-  height: 34px;
-  line-height: 34px;
+  height: 50px;
+  line-height: 20px;
   font-family: 'ApisBlack', sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   text-align: center;
   text-transform: uppercase;
   color: #16225c;
   border-radius: 12px;
   background: #fff2bd;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  padding-top: 3px;
 }
 
 .pov-parameter-list {
@@ -210,8 +211,8 @@
   box-shadow: 0 5px 0 #e09a00, 0 8px 15px rgba(22, 34, 92, .12);
   font-family: 'ApisBlack', sans-serif;
   color: #16225c;
-  font-size: 12.6px;
-  line-height: 1.02;
+  font-size: 13px;
+  line-height: 1.20;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
@@ -266,10 +267,10 @@
 
 .pov-param-btn img {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
-  margin: 0 auto 5px;
+  margin: 0 auto 4px;
 }
 
 .pov-param-btn span {
@@ -369,7 +370,7 @@
 .pov-seg-usp {
   font-family: 'ApisMedium', sans-serif;
   font-size: 15px;
-  line-height: 1.02;
+  line-height: 1.20;
   font-weight: 400;
   text-transform: none;
   max-width: 140px;
@@ -380,11 +381,22 @@
 /* Separate manual controls for populated wheel text.
    Increase/decrease these values if any future parameter/USP needs adjustment. */
 .pov-seg-label.filled .pov-seg-param {
-  color: #ffffff;
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  line-height: .95;
+  opacity: .82;
 }
 
 .pov-seg-label.filled .pov-seg-usp {
   color: #fff6c7;
+  font-family: 'ApisBlack', sans-serif;
+  font-size: 17px;
+  line-height: 1.02;
+  text-shadow: 0 0 7px rgba(255, 246, 199, .85), 0 2px 4px rgba(0,0,0,.32);
+}
+
+.pov-seg-label.filled.pov-just-filled .pov-seg-usp {
+  animation: povUspHighlight .95s ease-out both;
 }
 
 .pov-seg-label.filled.pov-long-text .pov-seg-param {
@@ -446,14 +458,15 @@
 .pov-center-percent {
   font-family: 'ApisBlack', sans-serif;
   font-size: 52px;
-  line-height: .9;
+  line-height: 1.2;
   color: #ef3d65;
 }
 
 .pov-center-text {
   margin-top: 0px;
+  width: 205px;
   font-family: 'ApisBlack', sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.12;
   color: #16225c;
   text-transform: uppercase;
@@ -461,8 +474,13 @@
 
 .poviztraText{
     color:#ef3d65;   /* Change to any colour */
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: 2000;
+}
+
+.poviztraShield {
+	width: 35px;
+	text-align: center;
 }
 
 .pov-center-circle.final .pov-center-percent {
@@ -470,7 +488,7 @@
 }
 
 .pov-center-circle.final .pov-center-text {
-  font-size: 22px;
+  font-size: 17px;
   line-height: 1.25;
   text-transform: none;
 }
@@ -596,10 +614,14 @@
 }
 
 .pov-action-panel button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
   width: 100%;
   height: 76px;
   margin-bottom: 24px;
+  padding: 0 28px;
   border: 0;
   border-radius: 20px;
   font-family: 'ApisBlack', sans-serif;
@@ -608,6 +630,18 @@
   color: #fff;
   cursor: pointer;
   box-shadow: 0 8px 0 rgba(0, 0, 0, .22), 0 15px 28px rgba(22, 34, 92, .25);
+}
+
+.pov-action-panel button img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: 0 0 34px;
+}
+
+.pov-action-panel button span {
+  display: block;
+  line-height: 1;
 }
 
 .pov-red-btn {
@@ -623,10 +657,10 @@
   position: absolute;
   left: 38px;
   top: 210px;
-  width: 336px;
+  width: 340px;
   height: 370px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, .95);
+  background: rgba(255, 255, 255, 1);
   border: 2px solid rgba(239, 61, 101, .22);
   box-shadow: 0 18px 38px rgba(22, 34, 92, .2);
   text-align: center;
@@ -636,15 +670,15 @@
 
 .pov-future-panel img {
   max-width: 100%;
-  max-height: 245px;
+  max-height: 60px;
   object-fit: contain;
 }
 
 .pov-future-panel div {
   margin-top: 15px;
-  font-family: 'ApisBlack', sans-serif;
+  font-family: 'ApisBold', sans-serif;
   font-size: 22px;
-  line-height: 1.15;
+  line-height: 1.50;
   color: #16225c;
 }
 
@@ -726,4 +760,10 @@
 @keyframes titleShine {
   0% {left:-40%;}
   60%,100% {left:120%;}
+}
+
+@keyframes povUspHighlight {
+  0% {transform: scale(.88); opacity: .55; filter: drop-shadow(0 0 0 rgba(255,246,199,0));}
+  55% {transform: scale(1.13); opacity: 1; filter: drop-shadow(0 0 8px rgba(255,246,199,.95));}
+  100% {transform: scale(1); opacity: 1; filter: drop-shadow(0 0 3px rgba(255,246,199,.55));}
 }
