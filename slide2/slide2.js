@@ -19,19 +19,20 @@ var POV_GAME_CONFIG = {
   soundVolume: 1.0,
   useCustomSoundFiles: true,
   customSounds: {
-    select: 'slide2/parameter-click.wav',
-    success: 'slide2/complete-100.wav'
+    select: 'slide2/parameter-click.mp3',
+    success: 'slide2/complete-100.mp3',
+	popit: 'slide2/pop-it.mp3'
   },
 
   finalImage: 'slide2/shield.png',
   finalText: 'You selected the parameters that matter the most,\nPoviztra delivers across every confidence driver – helping you prescribe with confidence every time.',
 
   parameters: [
-    { parameter: 'QUALITY', usp: 'rDNA Technology<sup>1</sup>', icon: 'slide2/quality.png' },
-	{ parameter: 'PRICE', usp: 'Starts 3999/- Onwards<sup>1</sup>', icon: 'slide2/price.png' },
+    { parameter: 'PRODUCT QUALITY', usp: 'rDNA Technology<sup>1</sup>', icon: 'slide2/quality.png' },
+	{ parameter: 'PRODUCT PRICING', usp: 'Starts 3999/- Onwards<sup>1</sup>', icon: 'slide2/price.png' },
 	{ parameter: 'DEVICE\nEXPERIENCE', usp: 'FlexTouch Device<sup>2,3,4</sup>', icon: 'slide2/device.png' },
 	{ parameter: 'CLINICAL\nFINDINGS', usp: '50 Phase 3 Clinical Trials Conducted<sup>2,3</sup>', icon: 'slide2/clinical.png' },
-	{ parameter: 'CARDIO VASCULAR OUTCOMES', usp: 'SCORE Trial And STEER Trials<sup>3,5,6,7,8</sup>', icon: 'slide2/cardiovascular.png' },
+	{ parameter: 'CARDIO OUTCOMES', usp: 'SCORE Trial And STEER Trials<sup>3,5,6,7,8</sup>', icon: 'slide2/cardiovascular.png' },
 	{ parameter: 'STORAGE &\nTRANSPORT', usp: 'Robust & Reliable Cold-Chain<sup>1</sup>', icon: 'slide2/storage.png' },
 	{ parameter: 'REGULATORY\nAPPROVALS', usp: 'Approved By EMA, FDA, PMDA<sup>2,3</sup>', icon: 'slide2/regulatory.png' },
 	{ parameter: 'REAL WORLD\nEXPERIENCE', usp: '49M Patient-Years Of Experience<sup>1</sup>', icon: 'slide2/real-world.png' }
@@ -42,7 +43,7 @@ var povSelectedItems = [];
 var povGameReady = false;
 var povAudioContext = null;
 
-var povIntroSound = new Audio('slide2/intro.wav');
+var povIntroSound = new Audio('slide2/intro.mp3');
 
 povIntroSound.preload = 'auto';
 povIntroSound.volume = Math.min(POV_GAME_CONFIG.soundVolume, 1);
@@ -76,7 +77,7 @@ function initPoviztraGame() {
 
   setTimeout(function () {
     playPovIntroSound();
-  }, 300);
+  }, 50);
 }
 
 function buildPovButtons() {
@@ -110,6 +111,10 @@ function bindPovEvents() {
 
   $(document).off('click.povRetry').on('click.povRetry', '#povRetryBtn', function () {
     resetPovGame();
+	$('.hit_pop1').fadeOut(220);
+	setTimeout(function () {
+		playPovIntroSound();
+	}, 50);
   });
 
   $(document).off('click.povProceed').on('click.povProceed', '#povProceedBtn', function () {
@@ -315,13 +320,16 @@ function showPovFuturePanel() {
     });
 
     $('#povFutureText').text(POV_GAME_CONFIG.finalText);
-
+	
+	if (typeof window.playPovPopItSound === "function") {
+		window.playPovPopItSound();
+	}
     setTimeout(function () {
-      $('#povFuturePanel').fadeIn(320);
-    }, 000);
+      $('#povFuturePanel').fadeIn(50);
+    }, 20);
 	setTimeout(function(){
 		go_nav('f');
-	}, 4000);
+	}, 5000);
 	
   });
 }
@@ -453,6 +461,10 @@ function playPovSuccessSound() {
     playPovTone(1046, 0.35, 0.24, 0.23);
   });
 }
+
+window.playPovPopItSound = function () {
+	playPovCustomSound('popit');
+};
 
 initPoviztraGame(); //Important to initialise the game code
 

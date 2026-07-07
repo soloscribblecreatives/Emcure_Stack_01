@@ -339,13 +339,13 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><audio preload="auto" id="intro" src="slide1/intro.mp3" type="audio/mpeg"></audio>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><div class="logo"><img src="slide1/logo.png"/></div><audio preload="auto" id="intro" src="slide1/intro.mp3" type="audio/mpeg"></audio>';
 	break;
 	case 2:
-	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><script>runAnimationWheel()</script>';
+	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><div class="logo"><img src="slide1/logo.png"/></div><script>runAnimationWheel()</script>';
 	break;
 	case 3:
-	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide3/s2.png"/></div><div class="s3"><img src="slide3/s3.png"/></div><div class="s4"><img src="slide3/s4.png"/></div><div class="s5"><img src="slide3/s5.png"/></div><div class="s6"><img src="slide3/s6.png"/></div><div class="s7"><img src="slide3/s7.png"/></div><div class="s8"><img src="slide3/s8.png"/></div><audio preload="auto" id="swoosh" src="slide3/swoosh.mp3" type="audio/mpeg"></audio><audio preload="auto" id="stack" src="slide3/stack.mp3" type="audio/mpeg"></audio>';
+	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide3/s2.png"/></div><div class="s3"><img src="slide3/s3.png"/></div><div class="s4"><img src="slide3/s4.png"/></div><div class="s5"><img src="slide3/s5.png"/></div><div class="s6"><img src="slide3/s6.png"/></div><div class="s7"><img src="slide3/s7.png"/></div><div class="s8"><img src="slide3/s8.png"/></div><div class="logo"><img src="slide1/logo.png"/></div><audio preload="auto" id="swoosh" src="slide3/swoosh.mp3" type="audio/mpeg"></audio><audio preload="auto" id="stack" src="slide3/stack.mp3" type="audio/mpeg"></audio>';
 	break;
 }
 
@@ -607,12 +607,18 @@ function hit_pop1() {
 	$('.hit_1').css("display","block");
 	$('.hit_close1').css("display","block");
 	$('.hit_pop1').css("display","none");
+	if (typeof window.playPovPopItSound === "function") {
+		window.playPovPopItSound();
+	}
 }
 
 function hit_close1() {
 	$('.hit_1').css("display","none");
 	$('.hit_pop1').css("display","block");
 	$('.hit_close1').css("display","none");
+	if (typeof window.playPovPopItSound === "function") {
+		window.playPovPopItSound();
+	}
 }
 
 function begin() {

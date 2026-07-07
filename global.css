@@ -640,3 +640,12 @@ h1 {
 	height: 810px;
 	z-index: 1;
 }
+
+.logo {
+  position: absolute;
+  left: 947px;
+  top: 25px;
+  width: 110px;
+  height: 49px;
+  z-index: 10;
+}
