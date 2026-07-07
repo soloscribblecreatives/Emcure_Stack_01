@@ -176,7 +176,7 @@ else{
 	
  } 
  
-	if(nextSlideNo <= 1){//number 3 is number of total slides present
+	if(nextSlideNo <= 3){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -227,7 +227,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	
 		//window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
@@ -244,15 +244,15 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 	}
 	
 }else {
 	
-	if(page_id <= 1){
+	if(page_id <= 3){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 2){
+		if(page_id == 4){
             flag=1;
         }
 	}
@@ -272,7 +272,7 @@ if(direction == 'b') {
   };
 
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
 		 //window.location = "js-call:" + "1" + ":" + encodeURIComponent(JSON.stringify({query:'NODATA', type:'brandNavigation', callback:'checkLastPgFn'}));
     }else{
         localStorage.setItem("gotoNextPrevBrand" ,0);
@@ -288,7 +288,7 @@ if(direction == 'b') {
   "callback" : "checkLastPgFn"
   };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe //pageswipe
   
     }
 
@@ -339,7 +339,13 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div id="povGame" class="pov-game"><div class="pov-bg-top"></div><div class="pov-bg-bottom"></div><div class="pov-header"><div class="pov-ribbon">THE POVIZTRA OPEN CHALLENGE</div></div><div id="povLeftPanel" class="pov-left-panel"><div class="pov-panel-copy"><h1>Build your <span>confidence</span></h1><p>Select the <b>5 parameters</b> that matters the most when you think of Semaglutide</p></div><div class="pov-panel-title">Choose your Top 5 Confidence Drivers</div><div id="povParameterList" class="pov-parameter-list"></div></div><div id="povActionPanel" class="pov-action-panel"><button id="povProceedBtn" class="pov-green-btn">Proceed</button><button id="povRetryBtn" class="pov-red-btn">Retry</button></div><div id="povFuturePanel" class="pov-future-panel"><img id="povFutureImage" src="slide1/final-image.png" alt=""><div id="povFutureText">You selected the parameters that matter the most, Poviztra delivers across every confidence driver – helping you prescribe with confidence every time.</div></div><div class="pov-wheel-wrap"><svg id="povWheelSvg" viewBox="0 0 620 620" class="pov-wheel-svg" aria-hidden="true"><defs><linearGradient id="povIdleGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff6d2"/><stop offset="55%" stop-color="#ffc21b"/><stop offset="100%" stop-color="#f3a600"/></linearGradient><linearGradient id="povFillGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#19235f"/><stop offset="50%" stop-color="#23348a"/><stop offset="100%" stop-color="#ef3d65"/></linearGradient><filter id="povGlow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g id="povWheelPaths"></g></svg><div id="povWheelLabels" class="pov-wheel-labels"></div><div id="povCenterCircle" class="pov-center-circle"><div id="povCenterPercent" class="pov-center-percent">0%</div><div id="povCenterText" class="pov-center-text">SELECT ANY 5<br>PARAMETERS</div></div></div><div id="povBottomNote" class="pov-bottom-note">Tap a parameter to begin 👆🏻</div><div id="povPopupOverlay" class="pov-popup-overlay"><div class="pov-popup-box"><button id="povPopupClose" class="pov-popup-close">×</button><img id="povPopupIcon" class="pov-popup-icon" src="" alt=""><div id="povPopupParameter" class="pov-popup-parameter"></div><div id="povPopupUSP" class="pov-popup-usp"></div><div class="pov-popup-copy">This selected parameter has been added to the confidence wheel.</div></div></div></div>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="s1"><img src="slide1/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide1/s2.png"/></div><div class="s3"><img src="slide1/s3.png"/></div><div class="s4"><img src="slide1/s4.png"/></div><div class="s5"><img src="slide1/s5.png"/></div><div class="s6"><img src="slide1/s6.png"/></div><audio preload="auto" id="intro" src="slide1/intro.mp3" type="audio/mpeg"></audio>';
+	break;
+	case 2:
+	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><script>runAnimationWheel()</script>';
+	break;
+	case 3:
+	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide3/s2.png"/></div><div class="s3"><img src="slide3/s3.png"/></div><div class="s4"><img src="slide3/s4.png"/></div><div class="s5"><img src="slide3/s5.png"/></div><div class="s6"><img src="slide3/s6.png"/></div><div class="s7"><img src="slide3/s7.png"/></div><div class="s8"><img src="slide3/s8.png"/></div><audio preload="auto" id="swoosh" src="slide3/swoosh.mp3" type="audio/mpeg"></audio><audio preload="auto" id="stack" src="slide3/stack.mp3" type="audio/mpeg"></audio>';
 	break;
 }
 
@@ -430,11 +436,39 @@ function open_page2(url,page_id,count){
 	document.getElementById("click_through").innerHTML='';
 	
 	if(page_id == 1){
-		document.getElementById("click_through").innerHTML='<div class="blocker"></div><div class="begin" onclick="begin()"></div>';
+		document.getElementById("click_through").innerHTML='<div class="blocker1"></div><div class="begin" onclick="begin()"></div>';
+		
+		setTimeout(function(){
+			intro();
+		}, 0000);
+
+		function intro(){
+			document.getElementById("intro").play();
+		}
 	}
 
 	if(page_id == 2){
-		document.getElementById("click_through").innerHTML='<div class="blocker1"></div>';
+		document.getElementById("click_through").innerHTML='<div class="blocker2"></div><div id="povGame" class="pov-game"><div class="pov-bg-top"></div><div class="pov-bg-bottom"></div><div class="pov-header"><div class="pov-ribbon">THE POVIZTRA OPEN CHALLENGE</div></div><div id="povLeftPanel" class="pov-left-panel"><div class="pov-panel-copy"><h1>Build your <span>confidence</span></h1><p>Select the <b>5 parameters</b> that matters the most when you think of Semaglutide</p></div><div class="pov-panel-title">Choose your Top 5 Confidence Drivers</div><div id="povParameterList" class="pov-parameter-list"></div></div><div id="povActionPanel" class="pov-action-panel"><button id="povProceedBtn" class="pov-green-btn"><img src="slide2/proceed-icon.png" alt=""><span>Proceed</span></button><button id="povRetryBtn" class="pov-red-btn"><img src="slide2/retry-icon.png" alt=""><span>Retry</span></button></div><div id="povFuturePanel" class="pov-future-panel"><img id="povFutureImage" src="slide2/final-image.png" alt=""><div id="povFutureText">You selected the parameters that matter the most, Poviztra delivers across every confidence driver – helping you prescribe with confidence every time.</div></div><div class="pov-wheel-wrap"><svg id="povWheelSvg" viewBox="0 0 620 620" class="pov-wheel-svg" aria-hidden="true"><defs><linearGradient id="povIdleGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff6d2"/><stop offset="55%" stop-color="#ffc21b"/><stop offset="100%" stop-color="#f3a600"/></linearGradient><linearGradient id="povFillGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#19235f"/><stop offset="50%" stop-color="#23348a"/><stop offset="100%" stop-color="#ef3d65"/></linearGradient><filter id="povGlow" x="-35%" y="-35%" width="170%" height="170%"><feGaussianBlur stdDeviation="5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g id="povWheelPaths"></g></svg><div id="povWheelLabels" class="pov-wheel-labels"></div><div id="povCenterCircle" class="pov-center-circle"><div id="povCenterPercent" class="pov-center-percent">0%</div><div id="povCenterText" class="pov-center-text">SELECT ANY 5<br>PARAMETERS</div></div></div><div id="povBottomNote" class="pov-bottom-note">Tap a parameter to begin 👆🏻</div><div id="povPopupOverlay" class="pov-popup-overlay"><div class="pov-popup-box"><button id="povPopupClose" class="pov-popup-close">×</button><img id="povPopupIcon" class="pov-popup-icon" src="" alt=""><div id="povPopupParameter" class="pov-popup-parameter"></div><div id="povPopupUSP" class="pov-popup-usp"></div><div class="pov-popup-copy">This selected parameter has been added to the confidence wheel.</div></div></div><div class="hit_1"><img src="slide2/pop.png" width="1080" height="810" alt=""/></div><div class="hit_pop1" onclick="hit_pop1()"><img src="slide2/ref.png"/></div><div class="hit_close1" onclick="hit_close1()"></div></div>';
+	}
+	
+	if(page_id == 3){
+		document.getElementById("click_through").innerHTML='';
+		
+		setTimeout(function(){
+			swoosh();
+		}, 0100);
+
+		function swoosh(){
+			document.getElementById("swoosh").play();
+		}
+		
+		setTimeout(function(){
+			stack();
+		}, 600);
+
+		function stack(){
+			document.getElementById("stack").play();
+		}
 	}
 
 }
@@ -564,7 +598,21 @@ function savedata(answer,type,questionNumber,page_id) {
 	  "callback" : "checkLastPgFn"
 	  };
 
-	window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe 
+	//window.messageHandler.postMessage(JSON.stringify(params)); //pageswipe 
+}
+
+/*--------------------- animation javascript -----------------------*/
+
+function hit_pop1() {
+	$('.hit_1').css("display","block");
+	$('.hit_close1').css("display","block");
+	$('.hit_pop1').css("display","none");
+}
+
+function hit_close1() {
+	$('.hit_1').css("display","none");
+	$('.hit_pop1').css("display","block");
+	$('.hit_close1').css("display","none");
 }
 
 function begin() {

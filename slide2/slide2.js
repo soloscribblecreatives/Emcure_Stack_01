@@ -1,7 +1,7 @@
-/* Poviztra Open Challenge Game
-   Editable slide-level game logic only. No minified code.
-   Popup feature is kept in code but disabled through POV_GAME_CONFIG.popupEnabled.
-*/
+function runAnimationWheel() {
+window.requestAnimationFrame(function () {
+
+$(document).ready(function () {
 
 var POV_GAME_CONFIG = {
   maxSelections: 5,
@@ -11,7 +11,7 @@ var POV_GAME_CONFIG = {
 
   /* Sound controls.
      Offline MP3 provision is enabled below.
-     Add these files inside slide1/:
+     Add these files inside slide2/:
      1) parameter-click.mp3 - plays on every parameter click.
      2) complete-100.mp3 - plays when 5 parameters are completed to 100%.
      If files are missing/blocked, the existing generated offline tones are used as fallback. */
@@ -19,22 +19,22 @@ var POV_GAME_CONFIG = {
   soundVolume: 1.0,
   useCustomSoundFiles: true,
   customSounds: {
-    select: 'slide1/parameter-click.wav',
-    success: 'slide1/complete-100.wav'
+    select: 'slide2/parameter-click.wav',
+    success: 'slide2/complete-100.wav'
   },
 
-  finalImage: 'slide1/shield.png',
+  finalImage: 'slide2/shield.png',
   finalText: 'You selected the parameters that matter the most,\nPoviztra delivers across every confidence driver – helping you prescribe with confidence every time.',
 
   parameters: [
-    { parameter: 'QUALITY', usp: 'rDNA Technology', icon: 'slide1/quality.png' },
-    { parameter: 'PRICE', usp: 'Starts 3999/- Onwards', icon: 'slide1/price.png' },
-    { parameter: 'DEVICE\nEXPERIENCE', usp: 'FlexTouch Device', icon: 'slide1/device.png' },
-    { parameter: 'CLINICAL\nFINDINGS', usp: '50 Phase 3 Clinical Trials Conducted', icon: 'slide1/clinical.png' },
-    { parameter: 'CARDIO VASCULAR OUTCOMES', usp: 'Score Trial And Steer Trials', icon: 'slide1/cardiovascular.png' },
-    { parameter: 'STORAGE &\nTRANSPORT', usp: 'Robust & Reliable Cold-Chain', icon: 'slide1/storage.png' },
-    { parameter: 'REGULATORY\nAPPROVALS', usp: 'Approved By EMA, FDA, PMDA', icon: 'slide1/regulatory.png' },
-    { parameter: 'REAL WORLD\nEXPERIENCE', usp: '49M Patient-Years Of Experience', icon: 'slide1/real-world.png' }
+    { parameter: 'QUALITY', usp: 'rDNA Technology<sup>1</sup>', icon: 'slide2/quality.png' },
+	{ parameter: 'PRICE', usp: 'Starts 3999/- Onwards<sup>1</sup>', icon: 'slide2/price.png' },
+	{ parameter: 'DEVICE\nEXPERIENCE', usp: 'FlexTouch Device<sup>2,3,4</sup>', icon: 'slide2/device.png' },
+	{ parameter: 'CLINICAL\nFINDINGS', usp: '50 Phase 3 Clinical Trials Conducted<sup>2,3</sup>', icon: 'slide2/clinical.png' },
+	{ parameter: 'CARDIO VASCULAR OUTCOMES', usp: 'SCORE Trial And STEER Trials<sup>3,5,6,7,8</sup>', icon: 'slide2/cardiovascular.png' },
+	{ parameter: 'STORAGE &\nTRANSPORT', usp: 'Robust & Reliable Cold-Chain<sup>1</sup>', icon: 'slide2/storage.png' },
+	{ parameter: 'REGULATORY\nAPPROVALS', usp: 'Approved By EMA, FDA, PMDA<sup>2,3</sup>', icon: 'slide2/regulatory.png' },
+	{ parameter: 'REAL WORLD\nEXPERIENCE', usp: '49M Patient-Years Of Experience<sup>1</sup>', icon: 'slide2/real-world.png' }
   ]
 };
 
@@ -42,7 +42,7 @@ var povSelectedItems = [];
 var povGameReady = false;
 var povAudioContext = null;
 
-var povIntroSound = new Audio('slide1/intro.wav');
+var povIntroSound = new Audio('slide2/intro.wav');
 
 povIntroSound.preload = 'auto';
 povIntroSound.volume = Math.min(POV_GAME_CONFIG.soundVolume, 1);
@@ -188,13 +188,14 @@ function selectPovParameter(index, btn) {
   if (povSelectedItems.length >= POV_GAME_CONFIG.maxSelections || btn.hasClass('selected')) {
     return;
   }
-
+	
   var item = POV_GAME_CONFIG.parameters[index];
   povSelectedItems.push(item);
 
   btn.addClass('selected pov-button-pop');
   setTimeout(function () {
     btn.removeClass('pov-button-pop');
+	$('.hit_pop1').fadeIn(220);
   }, 450);
 
   populatePovSegment(povSelectedItems.length, item);
@@ -230,7 +231,7 @@ function populatePovSegment(slot, item) {
 
   label.find('.pov-seg-no').text(slot);
   label.find('.pov-seg-param').text(item.parameter);
-  label.find('.pov-seg-usp').text(item.usp);
+  label.find('.pov-seg-usp').html(item.usp);
 
   /* Re-trigger CSS zoom animation every time a new segment is populated. */
   setTimeout(function () {
@@ -278,7 +279,7 @@ function showPovPopup(item) {
   });
 
   $('#povPopupParameter').text(item.parameter);
-  $('#povPopupUSP').text(item.usp);
+  $('#povPopupUSP').html(item.usp);
   $('#povPopupOverlay').css('display', 'flex').hide().fadeIn(160);
 }
 
@@ -294,7 +295,7 @@ function showPovCompletedState() {
 
   setTimeout(function () {
 	 $('#povCenterCircle').addClass('final pov-success-pulse');
-	 $('#povCenterText').html('<img class="poviztraShield" src="slide1/shield.png"/><b><span class="poviztraText">Poviztra</span></b> Complete Confidence,<br>Complete Care');
+	 $('#povCenterText').html('<img class="poviztraShield" src="slide2/shield.png"/><b><span class="poviztraText">Poviztra</span></b> Complete Confidence,<br>Complete Care');
 	 playPovSuccessSound();
 
      $('#povLeftPanel').fadeOut(220, function () {
@@ -318,6 +319,10 @@ function showPovFuturePanel() {
     setTimeout(function () {
       $('#povFuturePanel').fadeIn(320);
     }, 000);
+	setTimeout(function(){
+		go_nav('f');
+	}, 4000);
+	
   });
 }
 
@@ -447,4 +452,10 @@ function playPovSuccessSound() {
     playPovTone(784, 0.20, 0.18, 0.25);
     playPovTone(1046, 0.35, 0.24, 0.23);
   });
+}
+
+initPoviztraGame(); //Important to initialise the game code
+
+});
+});
 }

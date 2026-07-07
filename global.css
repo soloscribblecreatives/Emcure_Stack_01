@@ -623,7 +623,7 @@ h1 {
   z-index: 99;
 }
 
-.blocker {
+.blocker1 {
 	position: absolute;
 	left: 0px;
     top: 0px;
@@ -632,11 +632,11 @@ h1 {
 	z-index: 10;
 }
 
-.blocker1 {
+.blocker2 {
 	position: absolute;
 	left: 0px;
     top: 0px;
 	width: 1080px;
 	height: 810px;
-	z-index: 10;
+	z-index: 1;
 }
