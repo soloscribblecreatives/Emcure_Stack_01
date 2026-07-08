@@ -25,14 +25,14 @@ var POV_GAME_CONFIG = {
   },
 
   finalImage: 'slide2/shield.png',
-  finalText: 'You selected the parameters that matter the most,\nPoviztra delivers across every confidence driver – helping you prescribe with confidence every time.',
+  finalText: 'You selected the parameters that matter the most.\n<span class="finalText">Poviztra delivers</span> across every confidence driver – helping you prescribe with confidence every time.',
 
   parameters: [
     { parameter: 'PRODUCT QUALITY', usp: 'rDNA Technology<sup>1</sup>', icon: 'slide2/quality.png' },
 	{ parameter: 'PRODUCT PRICING', usp: 'Starts 3999/- Onwards<sup>1</sup>', icon: 'slide2/price.png' },
 	{ parameter: 'DEVICE\nEXPERIENCE', usp: 'FlexTouch Device<sup>2,3,4</sup>', icon: 'slide2/device.png' },
 	{ parameter: 'CLINICAL\nFINDINGS', usp: '50 Phase 3 Clinical Trials Conducted<sup>2,3</sup>', icon: 'slide2/clinical.png' },
-	{ parameter: 'CARDIO OUTCOMES', usp: 'SCORE Trial And STEER Trials<sup>3,5,6,7,8</sup>', icon: 'slide2/cardiovascular.png' },
+	{ parameter: 'CV OUTCOMES', usp: 'SCORE & STEER Trials<sup>3,5,6,7,8</sup>', icon: 'slide2/cardiovascular.png' },
 	{ parameter: 'STORAGE &\nTRANSPORT', usp: 'Robust & Reliable Cold-Chain<sup>1</sup>', icon: 'slide2/storage.png' },
 	{ parameter: 'REGULATORY\nAPPROVALS', usp: 'Approved By EMA, FDA, PMDA<sup>2,3</sup>', icon: 'slide2/regulatory.png' },
 	{ parameter: 'REAL WORLD\nEXPERIENCE', usp: '49M Patient-Years Of Experience<sup>1</sup>', icon: 'slide2/real-world.png' }
@@ -118,7 +118,7 @@ function bindPovEvents() {
   });
 
   $(document).off('click.povProceed').on('click.povProceed', '#povProceedBtn', function () {
-    showPovFuturePanel();
+	  begin();
   });
 }
 
@@ -304,7 +304,7 @@ function showPovCompletedState() {
 	 playPovSuccessSound();
 
      $('#povLeftPanel').fadeOut(220, function () {
-      $('#povActionPanel').fadeIn(220);
+      showPovFuturePanel();
      });
 
      $('#povBottomNote').html('Whatever builds your confidence, <span>Poviztra delivers with confidence.</span>');
@@ -314,24 +314,19 @@ function showPovCompletedState() {
 }
 
 function showPovFuturePanel() {
-  $('#povActionPanel').fadeOut(160, function () {
     $('#povFutureImage').attr('src', POV_GAME_CONFIG.finalImage).off('error').on('error', function () {
       $(this).hide();
     });
 
-    $('#povFutureText').text(POV_GAME_CONFIG.finalText);
+    $('#povFutureText').html(POV_GAME_CONFIG.finalText);
 	
 	if (typeof window.playPovPopItSound === "function") {
 		window.playPovPopItSound();
 	}
     setTimeout(function () {
       $('#povFuturePanel').fadeIn(50);
+	  $('#povActionPanel').fadeIn(50);
     }, 20);
-	setTimeout(function(){
-		go_nav('f');
-	}, 5000);
-	
-  });
 }
 
 function resetPovGame() {

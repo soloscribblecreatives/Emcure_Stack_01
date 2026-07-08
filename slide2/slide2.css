@@ -616,7 +616,7 @@
   display: none;
   position: absolute;
   left: 55px;
-  top: 345px;
+  top: 520px;
   width: 300px;
   z-index: 4;
 }
@@ -664,7 +664,7 @@
   display: none;
   position: absolute;
   left: 38px;
-  top: 225px;
+  top: 115px;
   width: 340px;
   height: 370px;
   border-radius: 24px;
@@ -678,8 +678,9 @@
 
 .pov-future-panel img {
   max-width: 100%;
-  max-height: 60px;
+  max-height: 70px;
   object-fit: contain;
+  margin-top: 5px;
 }
 
 .pov-future-panel div {
@@ -688,6 +689,10 @@
   font-size: 22px;
   line-height: 1.50;
   color: #16225c;
+}
+
+.pov-future-panel .finalText {
+  color: #ef3d65; 
 }
 
 .hit_1  {

@@ -25,8 +25,8 @@ z-index: 1;
 .s2 {
 position: absolute;
 left: 62px;
-top: 36px;
-width: 174px;
+top: 25px;
+width: 176px;
 height: 63px;
 animation: zoomIn 0.5s;
 animation-delay: 0.1s;
