@@ -1,5 +1,5 @@
 var arrSurveyQuestions = {
-   3: "Parameters?"
+   2: "Parameters?"
 };
 /*Code by android developers start here*/
 var startLoc = null;
@@ -176,7 +176,7 @@ else{
 	
  } 
  
-	if(nextSlideNo <= 3){//number 3 is number of total slides present
+	if(nextSlideNo <= 4){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -249,10 +249,10 @@ if(direction == 'b') {
 	
 }else {
 	
-	if(page_id <= 3){
+	if(page_id <= 4){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 4){
+		if(page_id == 5){
             flag=1;
         }
 	}
@@ -346,6 +346,9 @@ switch(pg_id){
 	break;
 	case 3:
 	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="s1"><img src="slide3/s1.png" width="1080" height="810" alt=""/></div><div class="s2"><img src="slide3/s2.png"/></div><div class="s3"><img src="slide3/s3.png"/></div><div class="s4"><img src="slide3/s4.png"/></div><div class="s5"><img src="slide3/s5.png"/></div><div class="s6"><img src="slide3/s6.png"/></div><div class="s7"><img src="slide3/s7.png"/></div><div class="s8"><img src="slide3/s8.png"/></div><div class="logo"><img src="slide1/logo.png"/></div><audio preload="auto" id="swoosh" src="slide3/swoosh.mp3" type="audio/mpeg"></audio><audio preload="auto" id="stack" src="slide3/stack.mp3" type="audio/mpeg"></audio>';
+	break;
+	case 4:
+	content='<link rel="stylesheet" type="text/css" href="slide4/slide4.css" media="screen"/><div class="s1"><img src="slide4/s1.png" width="1080" height="810" alt=""/></div>';
 	break;
 }
 
